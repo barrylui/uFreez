@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		0513AB991DC4FDC8000221D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513AB981DC4FDC8000221D9 /* AppDelegate.swift */; };
-		0513AB9B1DC4FDC8000221D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513AB9A1DC4FDC8000221D9 /* ViewController.swift */; };
 		0513AB9E1DC4FDC8000221D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0513AB9C1DC4FDC8000221D9 /* Main.storyboard */; };
 		0513ABA01DC4FDC8000221D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0513AB9F1DC4FDC8000221D9 /* Assets.xcassets */; };
 		0513ABA31DC4FDC8000221D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0513ABA11DC4FDC8000221D9 /* LaunchScreen.storyboard */; };
+		0513ABAB1DC4FE20000221D9 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABAA1DC4FE20000221D9 /* SignInViewController.swift */; };
+		0513ABB01DC4FE6C000221D9 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABAF1DC4FE6C000221D9 /* SWRevealViewController.m */; };
+		0513ABB21DC50071000221D9 /* menu.imageset in Resources */ = {isa = PBXBuildFile; fileRef = 0513ABB11DC50071000221D9 /* menu.imageset */; };
+		0513ABB41DC5008C000221D9 /* LangingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABB31DC5008C000221D9 /* LangingPageViewController.swift */; };
+		0513ABB61DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABB51DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift */; };
+		0513ABB81DC506DD000221D9 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */; };
+		0513ABBA1DC50764000221D9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABB91DC50764000221D9 /* AccountViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0513AB951DC4FDC8000221D9 /* uFree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uFree.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0513AB981DC4FDC8000221D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0513AB9A1DC4FDC8000221D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0513AB9D1DC4FDC8000221D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0513AB9F1DC4FDC8000221D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0513ABA21DC4FDC8000221D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0513ABA41DC4FDC8000221D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0513ABAA1DC4FE20000221D9 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0513ABAD1DC4FE6C000221D9 /* uFree-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "uFree-Bridging-Header.h"; sourceTree = "<group>"; };
+		0513ABAE1DC4FE6C000221D9 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		0513ABAF1DC4FE6C000221D9 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		0513ABB11DC50071000221D9 /* menu.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = menu.imageset; sourceTree = "<group>"; };
+		0513ABB31DC5008C000221D9 /* LangingPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangingPageViewController.swift; sourceTree = "<group>"; };
+		0513ABB51DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateFreeFriendsTableViewController.swift; sourceTree = "<group>"; };
+		0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		0513ABB91DC50764000221D9 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +68,30 @@
 		0513AB971DC4FDC8000221D9 /* uFree */ = {
 			isa = PBXGroup;
 			children = (
+				0513ABB11DC50071000221D9 /* menu.imageset */,
+				0513ABAC1DC4FE57000221D9 /* SWRevealViewController */,
 				0513AB981DC4FDC8000221D9 /* AppDelegate.swift */,
-				0513AB9A1DC4FDC8000221D9 /* ViewController.swift */,
 				0513AB9C1DC4FDC8000221D9 /* Main.storyboard */,
 				0513AB9F1DC4FDC8000221D9 /* Assets.xcassets */,
 				0513ABA11DC4FDC8000221D9 /* LaunchScreen.storyboard */,
 				0513ABA41DC4FDC8000221D9 /* Info.plist */,
+				0513ABB31DC5008C000221D9 /* LangingPageViewController.swift */,
+				0513ABAA1DC4FE20000221D9 /* SignInViewController.swift */,
+				0513ABB51DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift */,
+				0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */,
+				0513ABB91DC50764000221D9 /* AccountViewController.swift */,
 			);
 			path = uFree;
+			sourceTree = "<group>";
+		};
+		0513ABAC1DC4FE57000221D9 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0513ABAE1DC4FE6C000221D9 /* SWRevealViewController.h */,
+				0513ABAF1DC4FE6C000221D9 /* SWRevealViewController.m */,
+				0513ABAD1DC4FE6C000221D9 /* uFree-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +127,7 @@
 					0513AB941DC4FDC8000221D9 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 6CF599BUVU;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -127,6 +158,7 @@
 				0513ABA31DC4FDC8000221D9 /* LaunchScreen.storyboard in Resources */,
 				0513ABA01DC4FDC8000221D9 /* Assets.xcassets in Resources */,
 				0513AB9E1DC4FDC8000221D9 /* Main.storyboard in Resources */,
+				0513ABB21DC50071000221D9 /* menu.imageset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +169,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0513AB9B1DC4FDC8000221D9 /* ViewController.swift in Sources */,
+				0513ABB61DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift in Sources */,
 				0513AB991DC4FDC8000221D9 /* AppDelegate.swift in Sources */,
+				0513ABBA1DC50764000221D9 /* AccountViewController.swift in Sources */,
+				0513ABAB1DC4FE20000221D9 /* SignInViewController.swift in Sources */,
+				0513ABB81DC506DD000221D9 /* ScheduleViewController.swift in Sources */,
+				0513ABB41DC5008C000221D9 /* LangingPageViewController.swift in Sources */,
+				0513ABB01DC4FE6C000221D9 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,11 +298,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6CF599BUVU;
 				INFOPLIST_FILE = uFree/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CIS444.owinrauke.uFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "uFree/uFree-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -274,11 +314,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6CF599BUVU;
 				INFOPLIST_FILE = uFree/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CIS444.owinrauke.uFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "uFree/uFree-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
