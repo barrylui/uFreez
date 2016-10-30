@@ -8,13 +8,14 @@
 
 import UIKit
 
-class AccountViewController: UIViewController {
+class AccountViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var userNameTextField: UITextField!
+    @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var passWordTextField: UITextField!
     @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var issueLabel: UILabel!
+    @IBOutlet var friendsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +24,12 @@ class AccountViewController: UIViewController {
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-
+        
+        friendsTable!.delegate = self
+        friendsTable!.dataSource = self
+        
         nameLabel.text = CurrentUser.getName()
-        userNameTextField.text = CurrentUser.getUserName()
+        userNameLabel.text = CurrentUser.getUserName()
         passWordTextField.text = CurrentUser.getPassWord()
         phoneNumberTextField.text = CurrentUser.getPhoneNumber()
         // Do any additional setup after loading the view.
@@ -38,19 +42,46 @@ class AccountViewController: UIViewController {
     
     @IBAction func saveButtonClicked(button:UIButton) {
         // should be an http call to update the fields
-        if (userNameTextField.text == "" || passWordTextField.text == "" || phoneNumberTextField.text == ""){
+        if (passWordTextField.text == "" || phoneNumberTextField.text == ""){
             issueLabel.text = "You cannot leave fields blank!"
             issueLabel.textColor = UIColor.red
         } else {
-            CurrentUser.setUserName(userName: userNameTextField.text!)
-            CurrentUser.setPassWord(userName: passWordTextField.text!)
-            CurrentUser.setPhoneNumber(phoneNumber: phoneNumberTextField.text!)
+            if (CurrentUser.getPassWord() != passWordTextField.text) {
+                CurrentUser.setPassWord(userName: passWordTextField.text!)
+                //make http request for change
+            }
+            
+            if (CurrentUser.getPhoneNumber() != phoneNumberTextField.text) {
+                CurrentUser.setPhoneNumber(phoneNumber: phoneNumberTextField.text!)
+                //make http request for change
+            }
             issueLabel.text = "Saved!"
             issueLabel.textColor = UIColor.blue
         }
     }
     
-
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: FriendsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath) as! FriendsTableViewCell
+        if indexPath.row == 0 {
+            cell.friendsLabel.text = "omer"
+        } else if indexPath.row == 1 {
+            cell.friendsLabel.text = "ben"
+        } else {
+            cell.friendsLabel.text = "leor"
+        }
+        return cell
+    }
+    
     /*
     // MARK: - Navigation
 

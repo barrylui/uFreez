@@ -21,6 +21,7 @@
 		0585DB1C1DC53B1800A7F4BE /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */; };
 		0585DB1E1DC54D2300A7F4BE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */; };
 		05C88E9D1DC6981B00DFEDBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */; };
+		05C88EA11DC6AFE300DFEDBF /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				0513ABB51DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift */,
 				0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */,
 				0513ABB91DC50764000221D9 /* AccountViewController.swift */,
+				05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */,
 				0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */,
 				0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */,
 				05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */,
@@ -181,6 +184,7 @@
 				0513ABB61DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift in Sources */,
 				0513AB991DC4FDC8000221D9 /* AppDelegate.swift in Sources */,
 				0513ABBA1DC50764000221D9 /* AccountViewController.swift in Sources */,
+				05C88EA11DC6AFE300DFEDBF /* FriendsTableViewCell.swift in Sources */,
 				0513ABAB1DC4FE20000221D9 /* SignInViewController.swift in Sources */,
 				05C88E9D1DC6981B00DFEDBF /* SignUpViewController.swift in Sources */,
 				0513ABB81DC506DD000221D9 /* ScheduleViewController.swift in Sources */,
