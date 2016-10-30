@@ -10,9 +10,13 @@ import UIKit
 
 class LangingPageViewController: UIViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
+    @IBOutlet var welcomeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        welcomeLabel.text = "Hello \(CurrentUser.getName())"
+        
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))

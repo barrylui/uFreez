@@ -10,6 +10,11 @@ import UIKit
 
 class AccountViewController: UIViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var userNameTextField: UITextField!
+    @IBOutlet var passWordTextField: UITextField!
+    @IBOutlet var phoneNumberTextField: UITextField!
+    @IBOutlet var issueLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +24,30 @@ class AccountViewController: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
 
+        nameLabel.text = CurrentUser.getName()
+        userNameTextField.text = CurrentUser.getUserName()
+        passWordTextField.text = CurrentUser.getPassWord()
+        phoneNumberTextField.text = CurrentUser.getPhoneNumber()
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func saveButtonClicked(button:UIButton) {
+        // should be an http call to update the fields
+        if (userNameTextField.text == "" || passWordTextField.text == "" || phoneNumberTextField.text == ""){
+            issueLabel.text = "You cannot leave fields blank!"
+            issueLabel.textColor = UIColor.red
+        } else {
+            CurrentUser.setUserName(userName: userNameTextField.text!)
+            CurrentUser.setPassWord(userName: passWordTextField.text!)
+            CurrentUser.setPhoneNumber(phoneNumber: phoneNumberTextField.text!)
+            issueLabel.text = "Saved!"
+            issueLabel.textColor = UIColor.blue
+        }
     }
     
 

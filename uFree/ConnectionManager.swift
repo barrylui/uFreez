@@ -1,0 +1,44 @@
+//
+//  ConnectionManager.swift
+//  uFree
+//
+//  Created by Omer Winrauke on 10/29/16.
+//  Copyright © 2016 Omer Winrauke. All rights reserved.
+//
+
+import Foundation
+
+class ConnectionManager {
+    private static let serverAddress = "http://localhost:8081/"
+    
+    static func loginUser(userName: String, passWord: String, view: UIViewController) {
+        let url = NSURL(string: (serverAddress+"login/"+userName+"/"+passWord))
+        let preParsedUserInfo = getJSONObject(url: url!, view: view)
+        print(preParsedUserInfo)
+        
+        //CurrentUser.initializeUser(upresentViewController(nextViewController, animated: true, completion: nil)nparsedUser: preParsedUserInfo as! [String : AnyObject])
+    }
+
+    private static func getJSONObject(url: NSURL, view: UIViewController) -> NSDictionary {
+        let sem = DispatchSemaphore(value: 0);
+        
+        var jsonObject = NSDictionary()
+        let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
+            do {
+                jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
+                CurrentUser.initializeUser(unparsedUser: jsonObject as! [String : AnyObject], sem: sem)
+                //sem.signal()
+            } catch {
+            }
+        }
+        task.resume()
+        sem.wait(timeout: DispatchTime.distantFuture)
+        if (CurrentUser.isUserInitialized()) {
+            let controller = view.storyboard?.instantiateViewController(withIdentifier: "sw_reveal")
+            view.present(controller!, animated: true, completion: nil)
+        } else {
+            print("an error should be thrown here") // *******************
+        }
+        return jsonObject
+    }
+}
