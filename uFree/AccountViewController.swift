@@ -67,19 +67,21 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return CurrentUser.getFriendsList().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: FriendsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath) as! FriendsTableViewCell
-        if indexPath.row == 0 {
-            cell.friendsLabel.text = "omer"
-        } else if indexPath.row == 1 {
-            cell.friendsLabel.text = "ben"
-        } else {
-            cell.friendsLabel.text = "leor"
-        }
+        cell.friendsLabel.text = CurrentUser.getFriendsList()[indexPath.row]
         return cell
+    }
+    
+     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            CurrentUser.removeFromFriendsArray(index: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
+            //http request to make sure that user is removed from array
+        }
     }
     
     /*

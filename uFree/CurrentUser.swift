@@ -50,6 +50,10 @@ class CurrentUser {
         phoneNumber = String()
     }
     
+    static func removeFromFriendsArray(index: Int) {
+        friendsList.remove(at: index)
+    }
+    
     static func isUserInitialized() -> Bool {
         return userInitialized
     }
