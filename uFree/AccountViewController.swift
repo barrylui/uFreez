@@ -78,6 +78,9 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
+           
+            let nameOfUser = CurrentUser.getFriendsList()[indexPath.row]
+            ConnectionManager.deleteFriend(userName: CurrentUser.getUserName(), friendName: nameOfUser)
             CurrentUser.removeFromFriendsArray(index: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
             //http request to make sure that user is removed from array

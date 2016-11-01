@@ -11,6 +11,22 @@ import Foundation
 class ConnectionManager {
     private static let serverAddress = "http://localhost:8081/"
     
+    static func deleteFriend(userName: String, friendName: String) {
+        let url = NSURL(string: (serverAddress+"deleteFriend/"+userName+"/"+friendName))
+        makeAsyncCall(url: url!)
+    }
+    
+    private static func makeAsyncCall(url: NSURL) {
+        let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
+            do {
+                //nothing to recieve
+                print("i think we did it")
+            } catch {
+            }
+        }
+        task.resume()
+    }
+    
     static func loginUser(userName: String, passWord: String, view: UIViewController) {
         let url = NSURL(string: (serverAddress+"login/"+userName+"/"+passWord))
         let preParsedUserInfo = getJSONObject(url: url!, view: view)
