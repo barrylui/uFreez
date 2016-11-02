@@ -81,7 +81,7 @@ class ConnectionManager {
             let alert = UIAlertController(title: "Error!", message: "The user you entered is not a valid user name!", preferredStyle: .alert)
             
             // 3. Grab the value from the text field, and print it when the user clicks OK.
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
                
             }))
             view.present(alert, animated: true, completion: nil)
@@ -89,7 +89,7 @@ class ConnectionManager {
         }
     }
     
-    static func addUserWithCheck(userName: String, password: String, telephone: String, name: String, view: UIViewController) {
+    private static func addUserWithCheck(userName: String, password: String, telephone: String, name: String, view: UIViewController) {
         //let url = NSURL(string: (serverAddress+"createUser/"+userName+"/"+password+"/"+telephone+"/"+name))
         let sem = DispatchSemaphore(value: 0);
         let url = NSURL(string: (serverAddress+"checkUserExist/"+userName))
