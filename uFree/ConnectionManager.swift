@@ -21,6 +21,21 @@ class ConnectionManager {
         makeAsyncCall(url: url!)
     }
     
+    static func updateName(userName: String, name: String) {
+        let url = NSURL(string: (serverAddress+"updateName/"+userName+"/"+name))
+        makeAsyncCall(url: url!)
+    }
+    
+    static func updatePhoneNumber(userName: String, phoneNumber: String) {
+        let url = NSURL(string: (serverAddress+"updatePhoneNumber/"+userName+"/"+phoneNumber))
+        makeAsyncCall(url: url!)
+    }
+    
+    static func updatePassword(userName: String, password: String) {
+        let url = NSURL(string: (serverAddress+"updatePassword/"+userName+"/"+password))
+        makeAsyncCall(url: url!)
+    }
+    
     private static func makeAsyncCall(url: NSURL) {
         let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
             do {

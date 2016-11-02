@@ -26,7 +26,7 @@ class CurrentUser {
         if (unparsedUser["code"] == nil) {
             userName = unparsedUser["UserName"] as! String
             passWord = unparsedUser["Password"] as! String
-            //name = unparsedUser["Name"] as! String
+            name = (unparsedUser["FirstAndLastName"] as! String).replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
             friendsList = unparsedUser["FriendList"] as! [String]
             userInitialized = true
         }
@@ -66,20 +66,20 @@ class CurrentUser {
         return userName
     }
     
-    static func setUserName(userName: String) {
-        self.userName = userName
+    static func setName(name: String) {
+        self.name = name.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)
     }
     
     static func getPassWord() -> String {
-        return userName
+        return passWord
     }
     
-    static func setPassWord(userName: String) {
-        self.userName = userName
+    static func setPassWord(passWord: String) {
+        self.passWord = passWord
     }
     
     static func getName() -> String {
-        return name
+        return name.replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
     }
     
     static func getFriendsList() -> Array<String> {

@@ -10,7 +10,7 @@ import UIKit
 
 class AccountViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var menuButton:UIBarButtonItem!
-    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var nameTextField: UITextField!
     @IBOutlet var userNameLabel: UILabel!
     @IBOutlet var passWordTextField: UITextField!
     @IBOutlet var phoneNumberTextField: UITextField!
@@ -28,7 +28,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         friendsTable!.delegate = self
         friendsTable!.dataSource = self
         
-        nameLabel.text = CurrentUser.getName()
+        nameTextField.text = CurrentUser.getName()
         userNameLabel.text = CurrentUser.getUserName()
         passWordTextField.text = CurrentUser.getPassWord()
         phoneNumberTextField.text = CurrentUser.getPhoneNumber()
@@ -40,20 +40,23 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func saveButtonClicked(button:UIButton) {
+    @IBAction func saveButtonClicked(button:UIBarButtonItem) {
         // should be an http call to update the fields
         if (passWordTextField.text == "" || phoneNumberTextField.text == ""){
             issueLabel.text = "You cannot leave fields blank!"
             issueLabel.textColor = UIColor.red
         } else {
-            if (CurrentUser.getPassWord() != passWordTextField.text) {
-                CurrentUser.setPassWord(userName: passWordTextField.text!)
-                //make http request for change
+            if (CurrentUser.getName() != nameTextField.text) {
+                CurrentUser.setName(name: nameTextField.text!)
+                ConnectionManager.updateName(userName: CurrentUser.getUserName(), name: nameTextField.text!.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil))
             }
+            if (CurrentUser.getPassWord() != passWordTextField.text) {
+                CurrentUser.setPassWord(passWord: passWordTextField.text!)
+                ConnectionManager.updatePassword(userName: CurrentUser.getUserName(), password: passWordTextField.text!)            }
             
             if (CurrentUser.getPhoneNumber() != phoneNumberTextField.text) {
                 CurrentUser.setPhoneNumber(phoneNumber: phoneNumberTextField.text!)
-                //make http request for change
+                ConnectionManager.updatePhoneNumber(userName: CurrentUser.getUserName(), phoneNumber: phoneNumberTextField.text!)
             }
             issueLabel.text = "Saved!"
             issueLabel.textColor = UIColor.blue
