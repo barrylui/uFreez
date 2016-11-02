@@ -9,7 +9,7 @@
 import Foundation
 
 class ConnectionManager {
-    private static let serverAddress = "http://localhost:8081/"
+    private static let serverAddress = "http://ufree-server-dev.us-west-2.elasticbeanstalk.com/"
     
     static func deleteFriend(userName: String, friendName: String) {
         let url = NSURL(string: (serverAddress+"deleteFriend/"+userName+"/"+friendName))
@@ -36,9 +36,8 @@ class ConnectionManager {
         makeAsyncCall(url: url!)
     }
     
-    static func createUser(userName: String, password: String, telephone: String, name: String) {
-        let url = NSURL(string: (serverAddress+"createUser/"+userName+"/"+password+"/"+telephone+"/"+name))
-        makeAsyncCall(url: url!)
+    static func createUser(userName: String, password: String, telephone: String, name: String, view: UIViewController) {
+       addUserWithCheck(userName: userName, password: password, telephone: telephone, name: name, view: view)
     }
 
     private static func makeAsyncCall(url: NSURL) {
@@ -87,6 +86,37 @@ class ConnectionManager {
             }))
             view.present(alert, animated: true, completion: nil)
             CurrentUser.removeFromFriendsArray(index: CurrentUser.getFriendsList().count-1)
+        }
+    }
+    
+    static func addUserWithCheck(userName: String, password: String, telephone: String, name: String, view: UIViewController) {
+        let url = NSURL(string: (serverAddress+"createUser/"+userName+"/"+password+"/"+telephone+"/"+name))
+        let sem = DispatchSemaphore(value: 0);
+        //let url = NSURL(string: (serverAddress+"checkUserExist/"+friendName))
+        
+        var jsonObject = NSDictionary()
+        let task = URLSession.shared.dataTask(with: url as! URL) { (data, response, error) in
+            do {
+                jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
+                sem.signal()
+            } catch {
+            }
+        }
+        task.resume()
+        sem.wait(timeout: DispatchTime.distantFuture)
+        //var dic: [String : AnyObject] = jsonObject as! [String : String] as [String : AnyObject]
+        let code = jsonObject["code"]
+        if (code as! Int  == 200) {
+            //addFriend(userName: userName, friendName: friendName)
+        } else {
+            print("an error should be thrown here") // *******************
+            let alert = UIAlertController(title: "Error!", message: "The user you entered is already taken!", preferredStyle: .alert)
+            
+            // 3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                
+            }))
+            view.present(alert, animated: true, completion: nil)
         }
     }
     

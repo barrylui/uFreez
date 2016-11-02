@@ -34,7 +34,7 @@ class SignUpViewController: UIViewController {
             CurrentUser.sanitizeFields()
             CurrentUser.initializeUser(name: nameTextField.text!, userName: userNameTextField.text!, passWord: passWordTextField.text!, phoneNumber: phoneNumberTextField.text!)
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "sw_reveal")
-            ConnectionManager.createUser(userName: CurrentUser.getUserName(), password: CurrentUser.getPassWord(), telephone: CurrentUser.getPhoneNumber(), name: CurrentUser.getNameForAsync())
+            ConnectionManager.createUser(userName: CurrentUser.getUserName(), password: CurrentUser.getPassWord(), telephone: CurrentUser.getPhoneNumber(), name: CurrentUser.getNameForAsync(), view: self)
             self.present(controller!, animated: true, completion: nil)
         } else {
             issueLabel.text = "Not all the fields were filled!" 
