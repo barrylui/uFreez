@@ -99,8 +99,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
             textField = alert.textFields![0] // Force unwrapping because we know it exists.
             CurrentUser.addToFriendsArray(friend: textField.text!)
             ConnectionManager.addFriend(userName: CurrentUser.getUserName(), friendName: textField.text!)
-            print("Text field: \(textField.text)")
-        }))
+            self.friendsTable.reloadData()        }))
         self.present(alert, animated: true, completion: nil)
     }
     
