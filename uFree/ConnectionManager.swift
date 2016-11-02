@@ -36,6 +36,16 @@ class ConnectionManager {
         makeAsyncCall(url: url!)
     }
     
+    static func createUser(userName: String, password: String, telephone: String, name: String) {
+        let url = NSURL(string: (serverAddress+"createUser/"+userName+"/"+password+"/"+telephone+"/"+name))
+        print(userName)
+        print(password)
+        print(telephone)
+        print(name)
+        makeAsyncCall(url: url!)
+    }
+
+    
     private static func makeAsyncCall(url: NSURL) {
         let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
             do {

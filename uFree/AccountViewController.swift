@@ -90,7 +90,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func addNewFriendButtonClicked(button: UIButton) {
-        let alert = UIAlertController(title: "Add User", message: "Enter a text", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add User", message: "Enter the user name of the friend you want to add", preferredStyle: .alert)
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in

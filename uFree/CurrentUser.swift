@@ -34,7 +34,7 @@ class CurrentUser {
     }
     
     static func initializeUser(name: String, userName: String, passWord: String, phoneNumber:String) {
-        self.name = name
+        self.name = name.replacingOccurrences(of: " ", with: "_", options: .literal, range: nil)
         self.userName = userName
         self.passWord = passWord
         self.phoneNumber = phoneNumber
@@ -80,6 +80,10 @@ class CurrentUser {
     
     static func getName() -> String {
         return name.replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
+    }
+    
+    static func getNameForAsync() -> String {
+        return name
     }
     
     static func getFriendsList() -> Array<String> {
