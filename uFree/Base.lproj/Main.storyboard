@@ -556,6 +556,9 @@
                                 <rect key="frame" x="282" y="316" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Friend"/>
+                                <connections>
+                                    <action selector="addNewFriendButtonClickedWithButton:" destination="8vA-GF-e62" eventType="touchUpInside" id="9sI-sz-u76"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZH-Lh-oOA">
                                 <rect key="frame" x="131" y="100" width="224" height="21"/>

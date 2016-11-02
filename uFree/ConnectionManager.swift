@@ -16,6 +16,11 @@ class ConnectionManager {
         makeAsyncCall(url: url!)
     }
     
+    static func addFriend(userName: String, friendName: String) {
+        let url = NSURL(string: (serverAddress+"addFriend/"+userName+"/"+friendName))
+        makeAsyncCall(url: url!)
+    }
+    
     private static func makeAsyncCall(url: NSURL) {
         let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
             do {

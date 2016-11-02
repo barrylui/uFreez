@@ -78,13 +78,30 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     
      func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete {
-           
             let nameOfUser = CurrentUser.getFriendsList()[indexPath.row]
             ConnectionManager.deleteFriend(userName: CurrentUser.getUserName(), friendName: nameOfUser)
             CurrentUser.removeFromFriendsArray(index: indexPath.row)
             tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
             //http request to make sure that user is removed from array
         }
+    }
+    
+    @IBAction func addNewFriendButtonClicked(button: UIButton) {
+        let alert = UIAlertController(title: "Add User", message: "Enter a text", preferredStyle: .alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = ""
+        }
+        var textField = UITextField()
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            textField = alert.textFields![0] // Force unwrapping because we know it exists.
+            CurrentUser.addToFriendsArray(friend: textField.text!)
+            ConnectionManager.addFriend(userName: CurrentUser.getUserName(), friendName: textField.text!)
+            print("Text field: \(textField.text)")
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     /*

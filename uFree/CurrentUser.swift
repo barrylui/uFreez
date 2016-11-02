@@ -54,6 +54,10 @@ class CurrentUser {
         friendsList.remove(at: index)
     }
     
+    static func addToFriendsArray(friend: String) {
+        friendsList.append(friend)
+    }
+    
     static func isUserInitialized() -> Bool {
         return userInitialized
     }
