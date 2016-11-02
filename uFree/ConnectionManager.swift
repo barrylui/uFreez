@@ -38,20 +38,14 @@ class ConnectionManager {
     
     static func createUser(userName: String, password: String, telephone: String, name: String) {
         let url = NSURL(string: (serverAddress+"createUser/"+userName+"/"+password+"/"+telephone+"/"+name))
-        print(userName)
-        print(password)
-        print(telephone)
-        print(name)
         makeAsyncCall(url: url!)
     }
 
-    
     private static func makeAsyncCall(url: NSURL) {
         let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
             do {
                 //nothing to recieve
                 print("i think we did it")
-            } catch {
             }
         }
         task.resume()
@@ -65,6 +59,30 @@ class ConnectionManager {
         //CurrentUser.initializeUser(upresentViewController(nextViewController, animated: true, completion: nil)nparsedUser: preParsedUserInfo as! [String : AnyObject])
     }
 
+    static func addFriendWithCheck(userName: String, friendName: String) {
+        let sem = DispatchSemaphore(value: 0);
+        let url = NSURL(string: (serverAddress+"checkUserExist/"+friendName))
+
+        var jsonObject = NSDictionary()
+        let task = URLSession.shared.dataTask(with: url as! URL) { (data, response, error) in
+            do {
+                jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
+                sem.signal()
+            } catch {
+            }
+        }
+        task.resume()
+        sem.wait(timeout: DispatchTime.distantFuture)
+        //var dic: [String : AnyObject] = jsonObject as! [String : String] as [String : AnyObject]
+        let code = jsonObject["code"]
+        if (code as! Int  == 200) {
+           addFriend(userName: userName, friendName: friendName)
+        } else {
+            print("an error should be thrown here") // *******************
+        }
+    }
+    
+    
     private static func getJSONObject(url: NSURL, view: UIViewController) -> NSDictionary {
         let sem = DispatchSemaphore(value: 0);
         
