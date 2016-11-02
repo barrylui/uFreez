@@ -9,7 +9,7 @@
 import Foundation
 
 class ConnectionManager {
-    private static let serverAddress = "http://ufree-server-dev.us-west-2.elasticbeanstalk.com/"
+    private static let serverAddress = "http://uFree-Server-dev.us-west-2.elasticbeanstalk.com/"
     
     static func deleteFriend(userName: String, friendName: String) {
         let url = NSURL(string: (serverAddress+"deleteFriend/"+userName+"/"+friendName))
@@ -90,10 +90,9 @@ class ConnectionManager {
     }
     
     static func addUserWithCheck(userName: String, password: String, telephone: String, name: String, view: UIViewController) {
-        let url = NSURL(string: (serverAddress+"createUser/"+userName+"/"+password+"/"+telephone+"/"+name))
+        //let url = NSURL(string: (serverAddress+"createUser/"+userName+"/"+password+"/"+telephone+"/"+name))
         let sem = DispatchSemaphore(value: 0);
-        //let url = NSURL(string: (serverAddress+"checkUserExist/"+friendName))
-        
+        let url = NSURL(string: (serverAddress+"checkUserExist/"+userName))
         var jsonObject = NSDictionary()
         let task = URLSession.shared.dataTask(with: url as! URL) { (data, response, error) in
             do {
@@ -106,7 +105,9 @@ class ConnectionManager {
         sem.wait(timeout: DispatchTime.distantFuture)
         //var dic: [String : AnyObject] = jsonObject as! [String : String] as [String : AnyObject]
         let code = jsonObject["code"]
-        if (code as! Int  == 200) {
+        if (code as! Int  != 200) {
+            let url = NSURL(string: (serverAddress+"createUser/"+userName+"/"+password+"/"+telephone+"/"+name))
+            makeAsyncCall(url: url!)
             //addFriend(userName: userName, friendName: friendName)
         } else {
             print("an error should be thrown here") // *******************
