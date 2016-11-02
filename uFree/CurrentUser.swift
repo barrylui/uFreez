@@ -28,6 +28,7 @@ class CurrentUser {
             passWord = unparsedUser["Password"] as! String
             name = (unparsedUser["FirstAndLastName"] as! String).replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
             friendsList = unparsedUser["FriendList"] as! [String]
+            phoneNumber = unparsedUser["PhoneNumber"] as! String
             userInitialized = true
         }
         sem.signal()
