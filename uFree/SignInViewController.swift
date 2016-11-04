@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var userNameTextField: UITextField?
     @IBOutlet var passWordTextField: UITextField?
     
@@ -16,7 +16,8 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        userNameTextField!.delegate = self
+        passWordTextField!.delegate = self
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -29,6 +30,17 @@ class SignInViewController: UIViewController {
     @IBAction func signInButtonClicked(button: UIButton) {
         ConnectionManager.loginUser(userName: (userNameTextField?.text!)!, passWord: (passWordTextField?.text!)!, view: self)
         
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
+        return !prospectiveText.contains(" ")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
     }
     
 //    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {

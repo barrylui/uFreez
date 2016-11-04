@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AccountViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AccountViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var userNameLabel: UILabel!
@@ -27,6 +27,9 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         friendsTable!.delegate = self
         friendsTable!.dataSource = self
+        passWordTextField!.delegate = self
+        phoneNumberTextField!.delegate = self
+        nameTextField!.delegate = self
         
         nameTextField.text = CurrentUser.getName()
         userNameLabel.text = CurrentUser.getUserName()
@@ -105,6 +108,26 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.friendsTable.reloadData()}
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func userTappedBackground(gestureRecognizer: UITapGestureRecognizer) {
+        nameTextField?.resignFirstResponder()
+        passWordTextField?.resignFirstResponder()
+        phoneNumberTextField?.resignFirstResponder()
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (textField.tag != 1) {
+            let currentText = textField.text ?? ""
+            let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
+            return !prospectiveText.contains(" ")
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
     }
     
     /*

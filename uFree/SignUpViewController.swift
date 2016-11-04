@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passWordTextField: UITextField!
@@ -17,7 +17,10 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameTextField!.delegate = self
+        userNameTextField!.delegate = self
+        passWordTextField!.delegate = self
+        phoneNumberTextField!.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -39,6 +42,20 @@ class SignUpViewController: UIViewController {
         } else {
             issueLabel.text = "Not all the fields were filled!" 
         }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (textField.tag != 1) {
+            let currentText = textField.text ?? ""
+            let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
+            return !prospectiveText.contains(" ")
+        }
+        return true
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
     }
 
     /*
