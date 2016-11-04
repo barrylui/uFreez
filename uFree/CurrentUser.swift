@@ -104,6 +104,10 @@ class CurrentUser {
         return schedule
     }
     
+    static func setSchedule(day:Int, amOrPm:Int, tuple:(Int, Int), value:Int) {
+        schedule[day][amOrPm][tuple.0][tuple.1] = value
+    }
+    
     private static func loadSchedule(unparsedUser: [String:AnyObject]) {
         schedule.append(unparsedUser["Sun"] as! [[[Int]]])
         schedule.append(unparsedUser["Mon"] as! [[[Int]]])

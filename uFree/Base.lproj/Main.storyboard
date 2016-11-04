@@ -419,13 +419,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gcx-fX-lpa">
+                            <segmentedControl opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gcx-fX-lpa">
                                 <rect key="frame" x="114" y="568" width="147" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="AM"/>
                                     <segment title="PM"/>
                                 </segments>
+                                <connections>
+                                    <action selector="indexChangedWithSender:" destination="sdO-lh-GUu" eventType="touchUpInside" id="Hkd-8y-eT3"/>
+                                    <action selector="indexChangedWithSender:" destination="sdO-lh-GUu" eventType="primaryActionTriggered" id="RT6-Kh-aJz"/>
+                                </connections>
                             </segmentedControl>
                             <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O0W-DH-nDp">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
@@ -717,7 +721,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qmg-zU-37V">
+                            <button opaque="NO" tag="24" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qmg-zU-37V">
                                 <rect key="frame" x="32" y="334" width="34" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.1408514535" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -725,7 +729,7 @@
                                     <action selector="scheduleButtonClickedWithButton:" destination="sdO-lh-GUu" eventType="touchUpInside" id="nY0-hx-aXM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iJU-Ni-JzQ">
+                            <button opaque="NO" tag="25" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="iJU-Ni-JzQ">
                                 <rect key="frame" x="85" y="334" width="34" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.1408514535" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -987,65 +991,58 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Schedule" id="6oh-Tj-LpN">
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="add" id="14n-dC-Zyq"/>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="tHT-EN-6ah">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JIm-az-r14">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Update"/>
-                            </button>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="menuButton" destination="14n-dC-Zyq" id="Wea-U8-jZV"/>
-                        <outletCollection property="scheduleButtons" destination="tQF-YK-Zon" collectionClass="NSMutableArray" id="FlQ-4r-V1a"/>
-                        <outletCollection property="scheduleButtons" destination="dFf-cP-gRK" collectionClass="NSMutableArray" id="bpb-Lf-zer"/>
-                        <outletCollection property="scheduleButtons" destination="Syp-vY-6Jj" collectionClass="NSMutableArray" id="ffM-9O-FhQ"/>
-                        <outletCollection property="scheduleButtons" destination="5yH-Xr-XaB" collectionClass="NSMutableArray" id="Qfa-6O-qzc"/>
-                        <outletCollection property="scheduleButtons" destination="3c8-Ju-OVi" collectionClass="NSMutableArray" id="gZ2-4t-Lj7"/>
-                        <outletCollection property="scheduleButtons" destination="31o-46-JUV" collectionClass="NSMutableArray" id="QqC-Vy-aVu"/>
-                        <outletCollection property="scheduleButtons" destination="sNT-gc-awS" collectionClass="NSMutableArray" id="fjR-tt-CmR"/>
-                        <outletCollection property="scheduleButtons" destination="jDc-RF-2Mm" collectionClass="NSMutableArray" id="t4y-LP-xKc"/>
-                        <outletCollection property="scheduleButtons" destination="ujq-UV-SfZ" collectionClass="NSMutableArray" id="wth-fk-HTo"/>
-                        <outletCollection property="scheduleButtons" destination="ZXi-IP-rW8" collectionClass="NSMutableArray" id="SBp-Tx-eji"/>
-                        <outletCollection property="scheduleButtons" destination="UY8-LK-9EP" collectionClass="NSMutableArray" id="UfY-f2-ioA"/>
-                        <outletCollection property="scheduleButtons" destination="yaD-2Q-Z3h" collectionClass="NSMutableArray" id="w4T-tf-WED"/>
-                        <outletCollection property="scheduleButtons" destination="Ywn-Ok-OVf" collectionClass="NSMutableArray" id="sb9-ni-dQX"/>
-                        <outletCollection property="scheduleButtons" destination="bAR-ko-Ffc" collectionClass="NSMutableArray" id="3El-ls-ZYQ"/>
-                        <outletCollection property="scheduleButtons" destination="e9j-Uj-W6m" collectionClass="NSMutableArray" id="KxX-eD-tig"/>
-                        <outletCollection property="scheduleButtons" destination="5Av-U0-Edv" collectionClass="NSMutableArray" id="gLs-9y-jnG"/>
-                        <outletCollection property="scheduleButtons" destination="Yk6-5r-A3k" collectionClass="NSMutableArray" id="KhN-O3-Ni1"/>
-                        <outletCollection property="scheduleButtons" destination="Ijt-7c-DIF" collectionClass="NSMutableArray" id="bKZ-Ml-2mD"/>
-                        <outletCollection property="scheduleButtons" destination="sq9-fq-Vdz" collectionClass="NSMutableArray" id="NXo-uJ-9Tt"/>
-                        <outletCollection property="scheduleButtons" destination="3DY-ou-7u7" collectionClass="NSMutableArray" id="EXm-ZW-WWP"/>
-                        <outletCollection property="scheduleButtons" destination="Cw5-xy-R9D" collectionClass="NSMutableArray" id="TkT-X2-WVQ"/>
-                        <outletCollection property="scheduleButtons" destination="fCX-dW-axu" collectionClass="NSMutableArray" id="XDx-vR-hxc"/>
-                        <outletCollection property="scheduleButtons" destination="Mmb-lO-zlt" collectionClass="NSMutableArray" id="Rsc-c3-USm"/>
-                        <outletCollection property="scheduleButtons" destination="Y7j-O9-63b" collectionClass="NSMutableArray" id="2dQ-xa-60A"/>
-                        <outletCollection property="scheduleButtons" destination="qmg-zU-37V" collectionClass="NSMutableArray" id="Bw1-VU-Rg0"/>
-                        <outletCollection property="scheduleButtons" destination="iJU-Ni-JzQ" collectionClass="NSMutableArray" id="rBp-k0-Fei"/>
-                        <outletCollection property="scheduleButtons" destination="IBT-Qk-UYS" collectionClass="NSMutableArray" id="WLq-YA-hNF"/>
-                        <outletCollection property="scheduleButtons" destination="b99-FB-qdi" collectionClass="NSMutableArray" id="PQ8-St-TKU"/>
-                        <outletCollection property="scheduleButtons" destination="eGD-sS-tDb" collectionClass="NSMutableArray" id="yV7-MD-xE2"/>
-                        <outletCollection property="scheduleButtons" destination="Die-VP-Nwc" collectionClass="NSMutableArray" id="Zwi-Zd-jG2"/>
-                        <outletCollection property="scheduleButtons" destination="7LX-XV-Zbh" collectionClass="NSMutableArray" id="Rp3-Xw-zJB"/>
-                        <outletCollection property="scheduleButtons" destination="JzJ-1X-ahg" collectionClass="NSMutableArray" id="Tku-pz-9yK"/>
-                        <outletCollection property="scheduleButtons" destination="sjS-I8-1Bb" collectionClass="NSMutableArray" id="RQk-eq-n5p"/>
-                        <outletCollection property="scheduleButtons" destination="OkA-Xp-HNJ" collectionClass="NSMutableArray" id="i2X-FD-jQB"/>
-                        <outletCollection property="scheduleButtons" destination="VB2-xa-LVL" collectionClass="NSMutableArray" id="YWW-sm-UlH"/>
-                        <outletCollection property="scheduleButtons" destination="euC-X5-mF7" collectionClass="NSMutableArray" id="tTB-Sj-RnA"/>
-                        <outletCollection property="scheduleButtons" destination="Oit-eP-F0w" collectionClass="NSMutableArray" id="Ouk-Mx-o6i"/>
-                        <outletCollection property="scheduleButtons" destination="GTp-F2-4yw" collectionClass="NSMutableArray" id="SWM-tW-qID"/>
-                        <outletCollection property="scheduleButtons" destination="Vgz-e2-2tT" collectionClass="NSMutableArray" id="Ept-Ak-Sbf"/>
-                        <outletCollection property="scheduleButtons" destination="WIr-1z-Glb" collectionClass="NSMutableArray" id="JNv-bf-WDD"/>
-                        <outletCollection property="scheduleButtons" destination="QfZ-wy-wNS" collectionClass="NSMutableArray" id="7Nd-lQ-Wzl"/>
-                        <outletCollection property="scheduleButtons" destination="3N4-tz-4Yr" collectionClass="NSMutableArray" id="sSq-K3-wyX"/>
-                        <outletCollection property="scheduleButtons" destination="d8L-Lx-hRX" collectionClass="NSMutableArray" id="Xun-AU-RRS"/>
-                        <outletCollection property="scheduleButtons" destination="nin-Qu-zOt" collectionClass="NSMutableArray" id="ht5-nC-WWy"/>
-                        <outletCollection property="scheduleButtons" destination="ing-5Y-bDg" collectionClass="NSMutableArray" id="HbI-7k-hAt"/>
-                        <outletCollection property="scheduleButtons" destination="Y0r-Pg-KWG" collectionClass="NSMutableArray" id="rcG-6V-vZd"/>
-                        <outletCollection property="scheduleButtons" destination="HJ0-l1-ozQ" collectionClass="NSMutableArray" id="gzg-5R-v8H"/>
-                        <outletCollection property="scheduleButtons" destination="tMp-Px-DdW" collectionClass="NSMutableArray" id="HKh-Oy-U6j"/>
+                        <outletCollection property="scheduleButtons1" destination="tQF-YK-Zon" collectionClass="NSMutableArray" id="qdD-Vb-X68"/>
+                        <outletCollection property="scheduleButtons1" destination="dFf-cP-gRK" collectionClass="NSMutableArray" id="CRr-4w-3ma"/>
+                        <outletCollection property="scheduleButtons1" destination="Syp-vY-6Jj" collectionClass="NSMutableArray" id="I44-Np-Vu3"/>
+                        <outletCollection property="scheduleButtons1" destination="5yH-Xr-XaB" collectionClass="NSMutableArray" id="BR7-zu-NgG"/>
+                        <outletCollection property="scheduleButtons1" destination="3c8-Ju-OVi" collectionClass="NSMutableArray" id="wSQ-sG-pLL"/>
+                        <outletCollection property="scheduleButtons1" destination="31o-46-JUV" collectionClass="NSMutableArray" id="kn0-wm-GsW"/>
+                        <outletCollection property="scheduleButtons1" destination="qmg-zU-37V" collectionClass="NSMutableArray" id="1pZ-jn-XDV"/>
+                        <outletCollection property="scheduleButtons1" destination="iJU-Ni-JzQ" collectionClass="NSMutableArray" id="VVJ-jf-cxZ"/>
+                        <outletCollection property="scheduleButtons1" destination="IBT-Qk-UYS" collectionClass="NSMutableArray" id="kXK-Qo-7Xn"/>
+                        <outletCollection property="scheduleButtons1" destination="b99-FB-qdi" collectionClass="NSMutableArray" id="1n6-Gg-yA0"/>
+                        <outletCollection property="scheduleButtons1" destination="eGD-sS-tDb" collectionClass="NSMutableArray" id="4Ku-5z-WlM"/>
+                        <outletCollection property="scheduleButtons1" destination="Die-VP-Nwc" collectionClass="NSMutableArray" id="MbK-JR-sGV"/>
+                        <outletCollection property="scheduleButtons2" destination="sNT-gc-awS" collectionClass="NSMutableArray" id="Jdu-cb-K6r"/>
+                        <outletCollection property="scheduleButtons2" destination="jDc-RF-2Mm" collectionClass="NSMutableArray" id="z6r-2w-UZB"/>
+                        <outletCollection property="scheduleButtons2" destination="ujq-UV-SfZ" collectionClass="NSMutableArray" id="Rep-G7-5cX"/>
+                        <outletCollection property="scheduleButtons2" destination="ZXi-IP-rW8" collectionClass="NSMutableArray" id="aEF-vA-Rrq"/>
+                        <outletCollection property="scheduleButtons2" destination="UY8-LK-9EP" collectionClass="NSMutableArray" id="yWX-nS-u6J"/>
+                        <outletCollection property="scheduleButtons2" destination="yaD-2Q-Z3h" collectionClass="NSMutableArray" id="pV2-vI-zpb"/>
+                        <outletCollection property="scheduleButtons2" destination="7LX-XV-Zbh" collectionClass="NSMutableArray" id="can-yr-k8q"/>
+                        <outletCollection property="scheduleButtons2" destination="JzJ-1X-ahg" collectionClass="NSMutableArray" id="Xuq-Eb-DDQ"/>
+                        <outletCollection property="scheduleButtons2" destination="sjS-I8-1Bb" collectionClass="NSMutableArray" id="cec-q2-Myt"/>
+                        <outletCollection property="scheduleButtons2" destination="OkA-Xp-HNJ" collectionClass="NSMutableArray" id="Wqx-Li-qNk"/>
+                        <outletCollection property="scheduleButtons2" destination="VB2-xa-LVL" collectionClass="NSMutableArray" id="BuP-Ig-sj0"/>
+                        <outletCollection property="scheduleButtons2" destination="euC-X5-mF7" collectionClass="NSMutableArray" id="9if-QK-hbH"/>
+                        <outletCollection property="scheduleButtons3" destination="Ywn-Ok-OVf" collectionClass="NSMutableArray" id="Yhe-hd-bve"/>
+                        <outletCollection property="scheduleButtons3" destination="bAR-ko-Ffc" collectionClass="NSMutableArray" id="bzG-Br-3X2"/>
+                        <outletCollection property="scheduleButtons3" destination="e9j-Uj-W6m" collectionClass="NSMutableArray" id="NOC-0t-i3t"/>
+                        <outletCollection property="scheduleButtons3" destination="5Av-U0-Edv" collectionClass="NSMutableArray" id="c4E-G6-1m5"/>
+                        <outletCollection property="scheduleButtons3" destination="Yk6-5r-A3k" collectionClass="NSMutableArray" id="dNW-6g-rfj"/>
+                        <outletCollection property="scheduleButtons3" destination="Ijt-7c-DIF" collectionClass="NSMutableArray" id="d3e-Ev-klb"/>
+                        <outletCollection property="scheduleButtons3" destination="Oit-eP-F0w" collectionClass="NSMutableArray" id="nms-4t-dN3"/>
+                        <outletCollection property="scheduleButtons3" destination="GTp-F2-4yw" collectionClass="NSMutableArray" id="lwy-ko-bcJ"/>
+                        <outletCollection property="scheduleButtons3" destination="Vgz-e2-2tT" collectionClass="NSMutableArray" id="dHI-dF-YNa"/>
+                        <outletCollection property="scheduleButtons3" destination="WIr-1z-Glb" collectionClass="NSMutableArray" id="3de-Dd-Nxi"/>
+                        <outletCollection property="scheduleButtons3" destination="QfZ-wy-wNS" collectionClass="NSMutableArray" id="kIP-Jw-qf1"/>
+                        <outletCollection property="scheduleButtons3" destination="3N4-tz-4Yr" collectionClass="NSMutableArray" id="L9l-za-Wlf"/>
+                        <outletCollection property="scheduleButtons4" destination="sq9-fq-Vdz" collectionClass="NSMutableArray" id="qUd-Ld-OJa"/>
+                        <outletCollection property="scheduleButtons4" destination="3DY-ou-7u7" collectionClass="NSMutableArray" id="n9L-mq-zOS"/>
+                        <outletCollection property="scheduleButtons4" destination="Cw5-xy-R9D" collectionClass="NSMutableArray" id="imK-B3-sAR"/>
+                        <outletCollection property="scheduleButtons4" destination="fCX-dW-axu" collectionClass="NSMutableArray" id="b5A-Iu-PpE"/>
+                        <outletCollection property="scheduleButtons4" destination="Mmb-lO-zlt" collectionClass="NSMutableArray" id="PRS-uW-LhT"/>
+                        <outletCollection property="scheduleButtons4" destination="Y7j-O9-63b" collectionClass="NSMutableArray" id="onY-2i-vv9"/>
+                        <outletCollection property="scheduleButtons4" destination="d8L-Lx-hRX" collectionClass="NSMutableArray" id="5j8-4p-krs"/>
+                        <outletCollection property="scheduleButtons4" destination="nin-Qu-zOt" collectionClass="NSMutableArray" id="fOh-dN-I1I"/>
+                        <outletCollection property="scheduleButtons4" destination="ing-5Y-bDg" collectionClass="NSMutableArray" id="ahT-1N-yYy"/>
+                        <outletCollection property="scheduleButtons4" destination="Y0r-Pg-KWG" collectionClass="NSMutableArray" id="FsW-JD-bHE"/>
+                        <outletCollection property="scheduleButtons4" destination="HJ0-l1-ozQ" collectionClass="NSMutableArray" id="V1J-uz-f5r"/>
+                        <outletCollection property="scheduleButtons4" destination="tMp-Px-DdW" collectionClass="NSMutableArray" id="H38-Nm-Qay"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xQ-cR-dQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
