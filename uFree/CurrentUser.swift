@@ -18,7 +18,7 @@ class CurrentUser {
     
     private static var friendsList = Array<String>()
 
-    //dates not sure yet 
+    private static var schedule = Array<Array<Array<Array<Int>>>>()
     
     private static var phoneNumber = String()
     
@@ -29,6 +29,7 @@ class CurrentUser {
             name = (unparsedUser["FirstAndLastName"] as! String).replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
             friendsList = unparsedUser["FriendList"] as! [String]
             phoneNumber = unparsedUser["PhoneNumber"] as! String
+            loadSchedule(unparsedUser: unparsedUser)
             userInitialized = true
         }
         sem.signal()
@@ -97,6 +98,20 @@ class CurrentUser {
     
     static func setPhoneNumber(phoneNumber: String) {
         self.phoneNumber = phoneNumber
+    }
+
+    static func getSchedule() -> Array<Array<Array<Array<Int>>>> {
+        return schedule
+    }
+    
+    private static func loadSchedule(unparsedUser: [String:AnyObject]) {
+        schedule.append(unparsedUser["Sun"] as! [[[Int]]])
+        schedule.append(unparsedUser["Mon"] as! [[[Int]]])
+        schedule.append(unparsedUser["Tues"] as! [[[Int]]])
+        schedule.append(unparsedUser["Wed"] as! [[[Int]]]) 
+        schedule.append(unparsedUser["Thur"] as! [[[Int]]])
+        schedule.append(unparsedUser["Fri"] as! [[[Int]]])
+        schedule.append(unparsedUser["Sat"] as! [[[Int]]])
     }
 
 }
