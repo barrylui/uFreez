@@ -41,6 +41,7 @@ class CurrentUser {
         self.passWord = passWord
         self.phoneNumber = phoneNumber
         userInitialized = true
+        loadScheduleForNewUser()
     }
     
     static func sanitizeFields() {
@@ -50,6 +51,7 @@ class CurrentUser {
         name = String()
         friendsList = Array<String>()
         phoneNumber = String()
+        schedule = Array<Array<Array<Array<Int>>>>()
     }
     
     static func removeFromFriendsArray(index: Int) {
@@ -117,5 +119,12 @@ class CurrentUser {
         schedule.append(unparsedUser["Fri"] as! [[[Int]]])
         schedule.append(unparsedUser["Sat"] as! [[[Int]]])
     }
-
+    
+    private static func loadScheduleForNewUser() {
+        var day = [[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0], [0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]]
+        
+        for _ in 0...6 {
+            schedule.append(day)
+        }
+    }
 }
