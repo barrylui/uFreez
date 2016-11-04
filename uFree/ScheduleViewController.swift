@@ -8,18 +8,22 @@
 
 import UIKit
 
-class ScheduleViewController: UIViewController {
+class ScheduleViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var menuButton:UIBarButtonItem!
-    private var amOrPm: Int = 0
     @IBOutlet var scheduleButtons1: [UIButton]!
     @IBOutlet var scheduleButtons2: [UIButton]!
     @IBOutlet var scheduleButtons3: [UIButton]!
     @IBOutlet var scheduleButtons4: [UIButton]!
+    @IBOutlet var tabBar: UITabBar!
+    @IBOutlet var dayLabel: UILabel!
+    
     private var schedule2Darray: [[UIButton]] = []
-    private var currentDay = 1
+    private var currentDay = 0
+    private var amOrPm: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBar.delegate = self
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
@@ -31,6 +35,7 @@ class ScheduleViewController: UIViewController {
         schedule2Darray.append(scheduleButtons3)
         schedule2Darray.append(scheduleButtons4)
         loadSchedule(day: currentDay, amOrPm: amOrPm)
+        updateDayLabel(day: currentDay)
         // Do any additional setup after loading the view.
     }
 
@@ -38,6 +43,13 @@ class ScheduleViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        currentDay = item.tag
+        loadSchedule(day: currentDay, amOrPm: amOrPm)
+        updateDayLabel(day: currentDay)
+    }
+
     
     @IBAction func scheduleButtonClicked(button: UIButton) {
         button.backgroundColor = button.backgroundColor == UIColor.red ? UIColor.blue : UIColor.red
@@ -98,6 +110,26 @@ class ScheduleViewController: UIViewController {
             return "Sun"
         default:
             return ""
+        }
+    }
+    
+    private func updateDayLabel(day: Int) {
+        switch day {
+        case 0:
+            dayLabel.text = "Sunday"
+        case 1:
+            dayLabel.text = "Monday"
+        case 2:
+            dayLabel.text = "Tuesday"
+        case 3:
+            dayLabel.text = "Wednesday"
+        case 4:
+            dayLabel.text = "Thursday"
+        case 5:
+            dayLabel.text = "Friday"
+        case 6:
+            dayLabel.text = "Saturday"
+        default: break
         }
     }
     
