@@ -29,7 +29,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signInButtonClicked(button: UIButton) {
         ConnectionManager.loginUser(userName: (userNameTextField?.text!)!, passWord: (passWordTextField?.text!)!, view: self)
-        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -43,6 +43,12 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func signOutButtonClicked(butto: UIBarButtonItem) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "login_page")
+        self.present(controller!, animated: true, completion: nil)
+        CurrentUser.sanitizeFields()
+    }
+    
     @IBAction func saveButtonClicked(button:UIBarButtonItem) {
         // should be an http call to update the fields
         if (passWordTextField.text == "" || phoneNumberTextField.text == ""){

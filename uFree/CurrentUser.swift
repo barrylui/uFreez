@@ -13,13 +13,10 @@ class CurrentUser {
     
     private static var userName = String()
     private static var passWord = String()
-    
     private static var name = String()
     
     private static var friendsList = Array<String>()
-
     private static var schedule = Array<Array<Array<Array<Int>>>>()
-    
     private static var phoneNumber = String()
     
     static func initializeUser(unparsedUser: [String:AnyObject], sem: DispatchSemaphore) {
@@ -121,7 +118,7 @@ class CurrentUser {
     }
     
     private static func loadScheduleForNewUser() {
-        var day = [[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0], [0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]]
+        let day = [[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0], [0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]],[[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]]
         
         for _ in 0...6 {
             schedule.append(day)
