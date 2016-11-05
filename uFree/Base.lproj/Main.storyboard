@@ -363,7 +363,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="KF5-de-dmy">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="0Vo-jt-ueZ"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="0Vo-jt-ueZ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="0Vo-jt-ueZ" id="2y5-xd-vR6"/>
@@ -398,7 +398,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Available Friends" id="qMi-fJ-QvB">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="DPy-dR-1Vi"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="DPy-dR-1Vi"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="DPy-dR-1Vi" id="T9A-Zo-OHV"/>
@@ -998,7 +998,7 @@
                         <barButtonItem title="Item" id="tmH-6Q-gpC"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Schedule" id="6oh-Tj-LpN">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="add" id="14n-dC-Zyq"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" style="plain" id="14n-dC-Zyq"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -1204,7 +1204,7 @@
                         </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Account Settings" id="xQN-ll-6c8">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="LTC-QB-UYt"/>
+                        <barButtonItem key="leftBarButtonItem" image="menu" id="LTC-QB-UYt"/>
                         <rightBarButtonItems>
                             <barButtonItem title="Save" id="3Lc-Tl-w09">
                                 <connections>
@@ -1312,6 +1312,9 @@
             <point key="canvasLocation" x="3543" y="1089"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu" width="22" height="22"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bIR-2i-RT7"/>
     </inferredMetricsTieBreakers>
