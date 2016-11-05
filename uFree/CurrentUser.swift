@@ -18,6 +18,7 @@ class CurrentUser {
     private static var friendsList = Array<String>()
     private static var schedule = Array<Array<Array<Array<Int>>>>()
     private static var phoneNumber = String()
+    private static var availabilityOverride = String()
     
     static func initializeUser(unparsedUser: [String:AnyObject], sem: DispatchSemaphore) {
         if (unparsedUser["code"] == nil) {
@@ -26,6 +27,7 @@ class CurrentUser {
             name = (unparsedUser["FirstAndLastName"] as! String).replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
             friendsList = unparsedUser["FriendList"] as! [String]
             phoneNumber = unparsedUser["PhoneNumber"] as! String
+            availabilityOverride = unparsedUser["AvailabileOverride"] as! String
             loadSchedule(unparsedUser: unparsedUser)
             userInitialized = true
         }
@@ -48,6 +50,7 @@ class CurrentUser {
         name = String()
         friendsList = Array<String>()
         phoneNumber = String()
+        availabilityOverride = String()
         schedule = Array<Array<Array<Array<Int>>>>()
     }
     
@@ -105,6 +108,14 @@ class CurrentUser {
     
     static func setSchedule(day:Int, amOrPm:Int, tuple:(Int, Int), value:Int) {
         schedule[day][amOrPm][tuple.0][tuple.1] = value
+    }
+    
+    static func getAvailabilityOverride () -> String {
+        return availabilityOverride
+    }
+    
+    static func setAvailabilityOverride(value: String) {
+        availabilityOverride = value
     }
     
     private static func loadSchedule(unparsedUser: [String:AnyObject]) {

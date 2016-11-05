@@ -48,7 +48,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         if (textField.tag != 1) {
             let currentText = textField.text ?? ""
             let prospectiveText = (currentText as NSString).replacingCharacters(in: range, with: string)
-            return !prospectiveText.contains(" ")
+            return !prospectiveText.contains(" ") && !prospectiveText.contains("|")
         }
         return true
     }

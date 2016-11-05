@@ -16,6 +16,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var issueLabel: UILabel!
     @IBOutlet var friendsTable: UITableView!
+    @IBOutlet var availabilitySwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,10 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+        
+        if (CurrentUser.getAvailabilityOverride() == "1") {
+            availabilitySwitch.setOn(false, animated: true)
         }
         
         friendsTable!.delegate = self
@@ -120,6 +125,14 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         nameTextField?.resignFirstResponder()
         passWordTextField?.resignFirstResponder()
         phoneNumberTextField?.resignFirstResponder()
+    }
+    
+    @IBAction func switchValueChanged(sender: UISwitch) {
+        if sender.isOn {
+            ConnectionManager.updateAvalabilityOverride(userName: CurrentUser.getUserName(), value: "0")
+        } else {
+            ConnectionManager.updateAvalabilityOverride(userName: CurrentUser.getUserName(), value: "1")
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
