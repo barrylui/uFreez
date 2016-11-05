@@ -153,6 +153,14 @@ class ConnectionManager {
             view.present(controller!, animated: true, completion: nil)
         } else {
             print("an error should be thrown here") // *******************
+            let alert = UIAlertController(title: "Error!", message: "Invalid user name or password", preferredStyle: .alert)
+            
+            // 3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                
+            }))
+            view.present(alert, animated: true, completion: nil)
+            
         }
         return jsonObject
     }
