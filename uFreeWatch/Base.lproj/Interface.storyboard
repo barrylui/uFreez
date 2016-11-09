@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="uFreeWatch" customModuleProvider="target">
+                    <items>
+                        <label width="135" height="42" alignment="left" text="in uFree watch " textAlignment="center" id="CQA-j0-qg4"/>
+                        <button width="1" alignment="left" title="Button" id="IKK-A9-ZEf">
+                            <connections>
+                                <segue destination="e5L-fa-UvW" kind="push" id="8VJ-Lh-d4x"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Table Interface Controller-->
+        <scene sceneID="Q24-3q-TFQ">
+            <objects>
+                <controller id="e5L-fa-UvW" customClass="TableInterfaceController" customModule="uFreeWatch_Extension">
+                    <items>
+                        <table alignment="left" id="LIC-Sd-oMZ">
+                            <items>
+                                <tableRow identifier="MainRowType" id="gtD-zR-djd" customClass="cell" customModule="uFreeWatch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="Orf-ra-rIl">
+                                        <items>
+                                            <label width="127" height="39" alignment="left" text="Label" id="rrE-ua-pSB"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="rrE-ua-pSB" id="ks8-5m-8hC"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="LIC-Sd-oMZ" id="2g0-HK-PGL"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="545" y="346"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="uFreeWatch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
