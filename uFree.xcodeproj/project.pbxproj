@@ -18,6 +18,7 @@
 		0513ABB61DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABB51DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift */; };
 		0513ABB81DC506DD000221D9 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */; };
 		0513ABBA1DC50764000221D9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABB91DC50764000221D9 /* AccountViewController.swift */; };
+		052ECF4F1DD29728007AFAFA /* AvailableFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052ECF4E1DD29728007AFAFA /* AvailableFriendTableViewCell.swift */; };
 		0585DB1C1DC53B1800A7F4BE /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */; };
 		0585DB1E1DC54D2300A7F4BE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */; };
 		05C88E9D1DC6981B00DFEDBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */; };
@@ -40,6 +41,7 @@
 		0513ABB51DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateFreeFriendsTableViewController.swift; sourceTree = "<group>"; };
 		0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		0513ABB91DC50764000221D9 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		052ECF4E1DD29728007AFAFA /* AvailableFriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableFriendTableViewCell.swift; sourceTree = "<group>"; };
 		0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */,
 				0513ABB91DC50764000221D9 /* AccountViewController.swift */,
 				05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */,
+				052ECF4E1DD29728007AFAFA /* AvailableFriendTableViewCell.swift */,
 				0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */,
 				0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */,
 				05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */,
@@ -186,6 +189,7 @@
 				0513ABBA1DC50764000221D9 /* AccountViewController.swift in Sources */,
 				05C88EA11DC6AFE300DFEDBF /* FriendsTableViewCell.swift in Sources */,
 				0513ABAB1DC4FE20000221D9 /* SignInViewController.swift in Sources */,
+				052ECF4F1DD29728007AFAFA /* AvailableFriendTableViewCell.swift in Sources */,
 				05C88E9D1DC6981B00DFEDBF /* SignUpViewController.swift in Sources */,
 				0513ABB81DC506DD000221D9 /* ScheduleViewController.swift in Sources */,
 				0585DB1C1DC53B1800A7F4BE /* ConnectionManager.swift in Sources */,
@@ -317,6 +321,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6CF599BUVU;
 				INFOPLIST_FILE = uFree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CIS444.owinrauke.uFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -333,6 +338,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 6CF599BUVU;
 				INFOPLIST_FILE = uFree/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.CIS444.owinrauke.uFree;
 				PRODUCT_NAME = "$(TARGET_NAME)";

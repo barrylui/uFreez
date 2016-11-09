@@ -90,6 +90,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: FriendsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath) as! FriendsTableViewCell
         cell.friendsLabel.text = CurrentUser.getFriendsList()[indexPath.row]
+        print("here")
         return cell
     }
     
@@ -116,7 +117,8 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
             if (textField.text != "") {
                 CurrentUser.addToFriendsArray(friend: textField.text!)
                 ConnectionManager.addFriendWithCheck(userName: CurrentUser.getUserName(), friendName: textField.text!, view: self)
-                self.friendsTable.reloadData()}
+                self.friendsTable.reloadData()
+            }
         }))
         self.present(alert, animated: true, completion: nil)
     }
@@ -149,6 +151,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         return true;
     }
     
+
     /*
     // MARK: - Navigation
 

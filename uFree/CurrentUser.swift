@@ -20,6 +20,8 @@ class CurrentUser {
     private static var phoneNumber = String()
     private static var availabilityOverride = String()
     
+    private static var availableFriends = Array<AvailableFriends>()
+    
     static func initializeUser(unparsedUser: [String:AnyObject], sem: DispatchSemaphore) {
         if (unparsedUser["code"] == nil) {
             userName = unparsedUser["UserName"] as! String
@@ -51,6 +53,7 @@ class CurrentUser {
         friendsList = Array<String>()
         phoneNumber = String()
         availabilityOverride = String()
+        availableFriends = Array<AvailableFriends>()
         schedule = Array<Array<Array<Array<Int>>>>()
     }
     
@@ -118,6 +121,29 @@ class CurrentUser {
         availabilityOverride = value
     }
     
+    static func setAvailableFriends(unparsedArray: [String:AnyObject]) {
+        let unParsedArray = unparsedArray["sched"] as! [String]
+        for user in unParsedArray {
+            var arr = user.characters.split{$0 == "-"}.map(String.init)
+            print(arr)
+            var time = 0
+            if(arr[1] == "**15") {
+                time = -15
+            } else {
+                time = Int(arr[1])!
+            }
+            availableFriends.append(AvailableFriends(name: arr[0], time: time, phoneNumber: arr[2]))
+        }
+    }
+    
+    static func sanitizeAvailableFriends() {
+        availableFriends = Array<AvailableFriends>()
+    }
+    
+    static func getAvailableFriends() -> Array<AvailableFriends>{
+        return availableFriends
+    }
+    
     private static func loadSchedule(unparsedUser: [String:AnyObject]) {
         schedule.append(unparsedUser["Sun"] as! [[[Int]]])
         schedule.append(unparsedUser["Mon"] as! [[[Int]]])
@@ -136,3 +162,27 @@ class CurrentUser {
         }
     }
 }
+
+class AvailableFriends{
+    private var time: Int
+    private var name: String
+    private var phoneNumber: String
+    
+    init (name:String, time:Int, phoneNumber:String) {
+        self.time = time
+        self.name = name
+        self.phoneNumber = phoneNumber
+    }
+    
+    func getName() -> String {
+        return name
+    }
+    
+    func getTime() -> Int {
+        return time
+    }
+    
+    func getPhoneNumber() -> String {
+        return phoneNumber
+    }
+};

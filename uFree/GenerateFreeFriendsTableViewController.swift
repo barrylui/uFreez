@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import MessageUI
 
-class GenerateFreeFriendsTableViewController: UITableViewController {
+class GenerateFreeFriendsTableViewController: UIViewController,  UITableViewDelegate, UITableViewDataSource, MFMessageComposeViewControllerDelegate {
 
     @IBOutlet weak var menuButton:UIBarButtonItem!
+    @IBOutlet var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,16 @@ class GenerateFreeFriendsTableViewController: UITableViewController {
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
         }
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        //print(CurrentUser.getUserName())
+        ConnectionManager.getAvailableFriends(username: CurrentUser.getUserName(), tableView: tableView, view: self)
+//        self.tableView.reloadData()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,14 +44,82 @@ class GenerateFreeFriendsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return CurrentUser.getAvailableFriends().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: AvailableFriendTableViewCell = tableView.dequeueReusableCell(withIdentifier: "friend_cell", for: indexPath) as! AvailableFriendTableViewCell
+        cell.nameLabel.text = CurrentUser.getAvailableFriends()[indexPath.row].getName()
+        //cell.view = self
+        var time = String()
+        if (CurrentUser.getAvailableFriends()[indexPath.row].getTime() > 45) {
+            time = "Free for roughly an hour or more"
+        } else if (CurrentUser.getAvailableFriends()[indexPath.row].getTime() < 0) {
+            time = "Will be free in roughly \(abs(CurrentUser.getAvailableFriends()[indexPath.row].getTime())) minutes"
+        } else {
+            time = "Free for roughly \(abs(CurrentUser.getAvailableFriends()[indexPath.row].getTime())) minutes"
+        }
+        cell.timeLabel.text = time
+        cell.phoneNumber = CurrentUser.getAvailableFriends()[indexPath.row].getPhoneNumber()
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let sms = UITableViewRowAction(style: .normal, title: "Send SMS") { action, index in
+            print("more button tapped")
+            let messageVC = MFMessageComposeViewController()
+            
+            messageVC.body = "Enter a message";
+            messageVC.recipients = ["111111111"]
+            messageVC.messageComposeDelegate = self;
+            
+            if (MFMessageComposeViewController.canSendText()) {
+                self.present(messageVC, animated: false, completion: nil)
+            }
+            self.tableView.reloadData()
+            
+        }
+        sms.backgroundColor = UIColor.green
+        
+        return [sms]
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        switch (result) {
+        case MessageComposeResult.cancelled:
+            print("Message was cancelled")
+            self.dismiss(animated: true, completion: nil)
+        case MessageComposeResult.failed:
+            print("Message failed")
+            self.dismiss(animated: true, completion: nil)
+        case MessageComposeResult.sent:
+            print("Message was sent")
+            self.dismiss(animated: true, completion: nil)
+        default:
+            break;
+        }
+    }
+    
+    private func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        // you need to implement this method too or you can't swipe to display the actions
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == UITableViewCellEditingStyle.delete {
+//            let nameOfUser = CurrentUser.getFriendsList()[indexPath.row]
+//            ConnectionManager.deleteFriend(userName: CurrentUser.getUserName(), friendName: nameOfUser)
+//            CurrentUser.removeFromFriendsArray(index: indexPath.row)
+//            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
+//            //http request to make sure that user is removed from array
+//        }
     }
 
     /*
