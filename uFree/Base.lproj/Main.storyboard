@@ -373,7 +373,7 @@
             </objects>
             <point key="canvasLocation" x="4480.8000000000002" y="-1453.2233883058473"/>
         </scene>
-        <!--Generate Free Friends Table View Controller-->
+        <!--Available Friends-->
         <scene sceneID="i3a-eT-nSg">
             <objects>
                 <viewController storyboardIdentifier="friends_available" id="m3d-Iw-DyU" customClass="GenerateFreeFriendsTableViewController" customModule="uFree" customModuleProvider="target" sceneMemberID="viewController">
@@ -394,7 +394,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OcK-jM-sCl" id="SXR-54-Dop">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Omer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2s-hm-tgg">
@@ -423,7 +423,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="X6J-vj-aje">
+                    <navigationItem key="navigationItem" title="Available Friends" id="X6J-vj-aje">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="Hjx-MX-bWa"/>
                     </navigationItem>
                     <connections>
