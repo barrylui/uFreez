@@ -56,7 +56,7 @@ class GenerateFreeFriendsTableViewController: UIViewController,  UITableViewDele
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: AvailableFriendTableViewCell = tableView.dequeueReusableCell(withIdentifier: "friend_cell", for: indexPath) as! AvailableFriendTableViewCell
-        cell.nameLabel.text = CurrentUser.getAvailableFriends()[indexPath.row].getName()
+        cell.nameLabel.text = CurrentUser.getAvailableFriends()[indexPath.row].getName().replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
         //cell.view = self
         var time = String()
         if (CurrentUser.getAvailableFriends()[indexPath.row].getTime() > 45) {
@@ -76,8 +76,8 @@ class GenerateFreeFriendsTableViewController: UIViewController,  UITableViewDele
             print("more button tapped")
             let messageVC = MFMessageComposeViewController()
             
-            messageVC.body = "Enter a message";
-            messageVC.recipients = ["111111111"]
+            messageVC.body = "Hello \(CurrentUser.getAvailableFriends()[indexPath.row].getName().replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)), uFree?"
+            messageVC.recipients = [CurrentUser.getAvailableFriends()[indexPath.row].getPhoneNumber()]
             messageVC.messageComposeDelegate = self;
             
             if (MFMessageComposeViewController.canSendText()) {
