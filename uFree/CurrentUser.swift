@@ -18,7 +18,7 @@ class CurrentUser {
     private static var friendsList = Array<String>()
     private static var schedule = Array<Array<Array<Array<Int>>>>()
     private static var phoneNumber = String()
-    private static var availabilityOverride = String()
+    private static var availabilityOverride = Int()
     
     private static var availableFriends = Array<AvailableFriends>()
     
@@ -29,7 +29,7 @@ class CurrentUser {
             name = (unparsedUser["FirstAndLastName"] as! String).replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
             friendsList = unparsedUser["FriendList"] as! [String]
             phoneNumber = unparsedUser["PhoneNumber"] as! String
-            availabilityOverride = unparsedUser["AvailabileOverride"] as! String
+            availabilityOverride = unparsedUser["AvailabileOverride"] as! Int
             loadSchedule(unparsedUser: unparsedUser)
             userInitialized = true
         }
@@ -42,6 +42,7 @@ class CurrentUser {
         self.passWord = passWord
         self.phoneNumber = phoneNumber
         userInitialized = true
+        availabilityOverride = 0
         loadScheduleForNewUser()
     }
     
@@ -52,7 +53,7 @@ class CurrentUser {
         name = String()
         friendsList = Array<String>()
         phoneNumber = String()
-        availabilityOverride = String()
+        availabilityOverride = Int()
         availableFriends = Array<AvailableFriends>()
         schedule = Array<Array<Array<Array<Int>>>>()
     }
@@ -113,11 +114,11 @@ class CurrentUser {
         schedule[day][amOrPm][tuple.0][tuple.1] = value
     }
     
-    static func getAvailabilityOverride () -> String {
+    static func getAvailabilityOverride () -> Int {
         return availabilityOverride
     }
     
-    static func setAvailabilityOverride(value: String) {
+    static func setAvailabilityOverride(value: Int) {
         availabilityOverride = value
     }
     

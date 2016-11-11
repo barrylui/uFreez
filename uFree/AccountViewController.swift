@@ -26,7 +26,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        if (CurrentUser.getAvailabilityOverride() == "1") {
+        if (CurrentUser.getAvailabilityOverride() == 1) {
             availabilitySwitch.setOn(false, animated: true)
         }
         
