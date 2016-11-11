@@ -23,6 +23,7 @@
 		0585DB1E1DC54D2300A7F4BE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */; };
 		05C88E9D1DC6981B00DFEDBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */; };
 		05C88EA11DC6AFE300DFEDBF /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */; };
+		05F844641DD60C8000204509 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 05F844631DD60C8000204509 /* AppIcon.appiconset */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		05F844631DD60C8000204509 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				0509B1CC1DCE7A2300A07055 /* Images.xcassets */,
 				0513AB9C1DC4FDC8000221D9 /* Main.storyboard */,
 				0513AB9F1DC4FDC8000221D9 /* Assets.xcassets */,
+				05F844631DD60C8000204509 /* AppIcon.appiconset */,
 				0513ABA11DC4FDC8000221D9 /* LaunchScreen.storyboard */,
 				0513ABA41DC4FDC8000221D9 /* Info.plist */,
 				0513ABB31DC5008C000221D9 /* LangingPageViewController.swift */,
@@ -141,9 +144,9 @@
 				TargetAttributes = {
 					0513AB941DC4FDC8000221D9 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 6CF599BUVU;
+						DevelopmentTeam = 539HM634PU;
 						LastSwiftMigration = 0810;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -173,6 +176,7 @@
 				0513ABA31DC4FDC8000221D9 /* LaunchScreen.storyboard in Resources */,
 				0509B1CD1DCE7A2300A07055 /* Images.xcassets in Resources */,
 				0513ABA01DC4FDC8000221D9 /* Assets.xcassets in Resources */,
+				05F844641DD60C8000204509 /* AppIcon.appiconset in Resources */,
 				0513AB9E1DC4FDC8000221D9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,18 +321,18 @@
 		0513ABA81DC4FDC8000221D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6CF599BUVU;
+				DEVELOPMENT_TEAM = 539HM634PU;
 				INFOPLIST_FILE = uFree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.owinrauke.;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owinrauke.uFree.Alpha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "ea352860-6720-49e4-a07e-0fe5edbc2ac9";
+				PROVISIONING_PROFILE_SPECIFIER = "Omer's iPhone Dev Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "uFree/uFree-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -338,18 +342,18 @@
 		0513ABA91DC4FDC8000221D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6CF599BUVU;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 539HM634PU;
 				INFOPLIST_FILE = uFree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.owinrauke.;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owinrauke.uFree.Alpha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "08da55e2-ffda-40ef-bee9-e5f45b795a7c";
+				PROVISIONING_PROFILE_SPECIFIER = "Omer Distribution 2";
 				SWIFT_OBJC_BRIDGING_HEADER = "uFree/uFree-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
