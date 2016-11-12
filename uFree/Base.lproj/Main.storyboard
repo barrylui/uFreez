@@ -441,7 +441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHz-jN-4sS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6916" y="-824.43778110944538"/>
+            <point key="canvasLocation" x="4481" y="-583"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="h15-ch-KuZ">
@@ -1233,7 +1233,7 @@
                     <toolbarItems>
                         <barButtonItem style="plain" id="TS3-X0-9Gs">
                             <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="YRD-GN-eNZ">
-                                <rect key="frame" x="53" y="6" width="51" height="31"/>
+                                <rect key="frame" x="16" y="7" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                         </barButtonItem>
@@ -1344,7 +1344,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHF-Mo-8Gr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5976.8000000000002" y="-824.43778110944538"/>
+            <point key="canvasLocation" x="3542" y="-583"/>
         </scene>
     </scenes>
     <resources>

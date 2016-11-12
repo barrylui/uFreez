@@ -11,7 +11,7 @@ import Foundation
 class ConnectionManager {
     private static let serverAddress = "http://uFree-Server-dev.us-west-2.elasticbeanstalk.com/"
     
-    static func updateAvalabilityOverride(userName: String, value: String) {
+    static func updateAvalabilityOverride(userName: String, value: Int) {
         let urlRequest = "\(serverAddress)setAvailableOverride/\(userName)/\(value)"
         let url = NSURL(string: urlRequest)
         makeAsyncCall(url: url!)

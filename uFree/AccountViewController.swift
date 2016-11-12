@@ -131,9 +131,9 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBAction func switchValueChanged(sender: UISwitch) {
         if sender.isOn {
-            ConnectionManager.updateAvalabilityOverride(userName: CurrentUser.getUserName(), value: "0")
+            ConnectionManager.updateAvalabilityOverride(userName: CurrentUser.getUserName(), value: 0)
         } else {
-            ConnectionManager.updateAvalabilityOverride(userName: CurrentUser.getUserName(), value: "1")
+            ConnectionManager.updateAvalabilityOverride(userName: CurrentUser.getUserName(), value: 0)
         }
     }
     
