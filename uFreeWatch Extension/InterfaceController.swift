@@ -14,6 +14,10 @@ class InterfaceController: WKInterfaceController {
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        let defaults = UserDefaults(suiteName: "group.com.CIS444.owinrauke.uFree.preferences")
+        let user = String(describing: defaults?.object(forKey: "name_preference"))
+        print("!!", user)
+        //let userName = 2 //.contentsOfFile("Root.plist")["name_preference"]
         
         // Configure interface objects here.
     }

@@ -34,6 +34,7 @@
 		05E272101DD3CE7D00676BAF /* TableInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E2720F1DD3CE7D00676BAF /* TableInterfaceController.swift */; };
 		05E272121DD3CF5600676BAF /* ConnectionManagerWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E272111DD3CF5600676BAF /* ConnectionManagerWatch.swift */; };
 		05E272141DD3CF5C00676BAF /* CurrentUserWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E272131DD3CF5C00676BAF /* CurrentUserWatch.swift */; };
+		05F8446C1DD82B6B00204509 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 05F8446B1DD82B6B00204509 /* Settings-Watch.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,9 @@
 		05E2720F1DD3CE7D00676BAF /* TableInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableInterfaceController.swift; sourceTree = "<group>"; };
 		05E272111DD3CF5600676BAF /* ConnectionManagerWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManagerWatch.swift; sourceTree = "<group>"; };
 		05E272131DD3CF5C00676BAF /* CurrentUserWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserWatch.swift; sourceTree = "<group>"; };
+		05F844671DD821C000204509 /* uFree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uFree.entitlements; sourceTree = "<group>"; };
+		05F844681DD8239200204509 /* uFreeWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uFreeWatch.entitlements; sourceTree = "<group>"; };
+		05F8446B1DD82B6B00204509 /* Settings-Watch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-Watch.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		0513AB8C1DC4FDC8000221D9 = {
 			isa = PBXGroup;
 			children = (
+				05F8446B1DD82B6B00204509 /* Settings-Watch.bundle */,
 				0513AB971DC4FDC8000221D9 /* uFree */,
 				05E271E51DD3CBC500676BAF /* uFreeWatch */,
 				05E271F41DD3CBC500676BAF /* uFreeWatch Extension */,
@@ -156,6 +161,7 @@
 		0513AB971DC4FDC8000221D9 /* uFree */ = {
 			isa = PBXGroup;
 			children = (
+				05F844671DD821C000204509 /* uFree.entitlements */,
 				0513ABAC1DC4FE57000221D9 /* SWRevealViewController */,
 				0513AB981DC4FDC8000221D9 /* AppDelegate.swift */,
 				0509B1CC1DCE7A2300A07055 /* Images.xcassets */,
@@ -190,6 +196,7 @@
 		05E271E51DD3CBC500676BAF /* uFreeWatch */ = {
 			isa = PBXGroup;
 			children = (
+				05F844681DD8239200204509 /* uFreeWatch.entitlements */,
 				05E271E61DD3CBC500676BAF /* Interface.storyboard */,
 				05E271E91DD3CBC500676BAF /* Assets.xcassets */,
 				05E271EB1DD3CBC500676BAF /* Info.plist */,
@@ -292,11 +299,21 @@
 						DevelopmentTeam = 6CF599BUVU;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					05E271E31DD3CBC500676BAF = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 6CF599BUVU;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					05E271EF1DD3CBC500676BAF = {
 						CreatedOnToolsVersion = 8.1;
@@ -331,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0513ABA31DC4FDC8000221D9 /* LaunchScreen.storyboard in Resources */,
+				05F8446C1DD82B6B00204509 /* Settings-Watch.bundle in Resources */,
 				0509B1CD1DCE7A2300A07055 /* Images.xcassets in Resources */,
 				0513ABA01DC4FDC8000221D9 /* Assets.xcassets in Resources */,
 				0513AB9E1DC4FDC8000221D9 /* Main.storyboard in Resources */,
@@ -530,6 +548,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = uFree/uFree.entitlements;
 				DEVELOPMENT_TEAM = 6CF599BUVU;
 				INFOPLIST_FILE = uFree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -547,6 +566,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = uFree/uFree.entitlements;
 				DEVELOPMENT_TEAM = 6CF599BUVU;
 				INFOPLIST_FILE = uFree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -563,6 +583,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = uFreeWatch/uFreeWatch.entitlements;
 				DEVELOPMENT_TEAM = 6CF599BUVU;
 				IBSC_MODULE = uFreeWatch_Extension;
 				INFOPLIST_FILE = uFreeWatch/Info.plist;
@@ -581,6 +602,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = uFreeWatch/uFreeWatch.entitlements;
 				DEVELOPMENT_TEAM = 6CF599BUVU;
 				IBSC_MODULE = uFreeWatch_Extension;
 				INFOPLIST_FILE = uFreeWatch/Info.plist;
@@ -656,6 +678,7 @@
 				05E272061DD3CBC500676BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		05E272091DD3CBC500676BAF /* Build configuration list for PBXNativeTarget "uFreeWatch" */ = {
 			isa = XCConfigurationList;
@@ -664,6 +687,7 @@
 				05E272041DD3CBC500676BAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
