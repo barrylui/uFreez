@@ -19,6 +19,7 @@ class ConnectionManager {
     
     static func updateSchedule(userName: String, day: String, amOrPm:Int, hour: Int, min: Int, value: Int) {
         let urlRequest = "\(serverAddress)updateDay/\(userName)/\(day)/\(amOrPm)/\(hour)/\(min)/\(value)"
+        print("\(serverAddress)updateDay/\(userName)/\(day)/\(amOrPm)/\(hour)/\(min)/\(value)")
         let url = NSURL(string: urlRequest)
         makeAsyncCall(url: url!)
     }

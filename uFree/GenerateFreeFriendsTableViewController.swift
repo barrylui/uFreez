@@ -67,6 +67,7 @@ class GenerateFreeFriendsTableViewController: UIViewController,  UITableViewDele
             time = "Free for roughly \(abs(CurrentUser.getAvailableFriends()[indexPath.row].getTime())) minutes"
         }
         cell.timeLabel.text = time
+        cell.timeBigLabel.text = "\(CurrentUser.getAvailableFriends()[indexPath.row].getTime())"
         cell.phoneNumber = CurrentUser.getAvailableFriends()[indexPath.row].getPhoneNumber()
         return cell
     }

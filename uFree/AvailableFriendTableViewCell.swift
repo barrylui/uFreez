@@ -12,6 +12,7 @@ import MessageUI
 class AvailableFriendTableViewCell: UITableViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var timeBigLabel: UILabel!
     @IBOutlet var view: UIViewController!
     
     var phoneNumber: String = String()
