@@ -24,6 +24,7 @@
 		05C88E9D1DC6981B00DFEDBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */; };
 		05C88EA11DC6AFE300DFEDBF /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */; };
 		05F844641DD60C8000204509 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 05F844631DD60C8000204509 /* AppIcon.appiconset */; };
+		05F8446E1DD9483C00204509 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8446D1DD9483C00204509 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		05F844631DD60C8000204509 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
+		05F8446D1DD9483C00204509 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				0513ABA11DC4FDC8000221D9 /* LaunchScreen.storyboard */,
 				0513ABA41DC4FDC8000221D9 /* Info.plist */,
 				0513ABB31DC5008C000221D9 /* LangingPageViewController.swift */,
+				05F8446D1DD9483C00204509 /* Reachability.swift */,
 				0513ABAA1DC4FE20000221D9 /* SignInViewController.swift */,
 				0513ABB51DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift */,
 				0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */,
@@ -200,6 +203,7 @@
 				0513ABB41DC5008C000221D9 /* LangingPageViewController.swift in Sources */,
 				0585DB1E1DC54D2300A7F4BE /* CurrentUser.swift in Sources */,
 				0513ABB01DC4FE6C000221D9 /* SWRevealViewController.m in Sources */,
+				05F8446E1DD9483C00204509 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

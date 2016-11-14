@@ -29,7 +29,15 @@ class GenerateFreeFriendsTableViewController: UIViewController,  UITableViewDele
         //print(CurrentUser.getUserName())
         ConnectionManager.getAvailableFriends(username: CurrentUser.getUserName(), tableView: tableView, view: self)
 //        self.tableView.reloadData()
-        
+        if (CurrentUser.getAvailableFriends().count == 0) {
+            let alert = UIAlertController(title: "Alert!", message: "There are no users available at this time", preferredStyle: .alert)
+            
+            // 3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

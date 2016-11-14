@@ -32,15 +32,25 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signUpButtonClicked(button: UIButton) {
         // need to check if current user exits 
         // need to call async task to insure user is on DB 
-        
-        if (nameTextField.text != "" && userNameTextField.text != "" && passWordTextField.text != "" && phoneNumberTextField.text != "") {
-            CurrentUser.sanitizeFields()
-            CurrentUser.initializeUser(name: nameTextField.text!, userName: userNameTextField.text!, passWord: passWordTextField.text!, phoneNumber: phoneNumberTextField.text!)
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "sw_reveal")
-            ConnectionManager.createUser(userName: CurrentUser.getUserName(), password: CurrentUser.getPassWord(), telephone: CurrentUser.getPhoneNumber(), name: CurrentUser.getNameForAsync(), view: self)
-            self.present(controller!, animated: true, completion: nil)
+        let internetCheck = Reachability()
+        if (internetCheck.isInternetAvailable()) {
+            if (nameTextField.text != "" && userNameTextField.text != "" && passWordTextField.text != "" && phoneNumberTextField.text != "") {
+                CurrentUser.sanitizeFields()
+                CurrentUser.initializeUser(name: nameTextField.text!, userName: userNameTextField.text!, passWord: passWordTextField.text!, phoneNumber: phoneNumberTextField.text!)
+                let controller = self.storyboard?.instantiateViewController(withIdentifier: "sw_reveal")
+                ConnectionManager.createUser(userName: CurrentUser.getUserName(), password: CurrentUser.getPassWord(), telephone: CurrentUser.getPhoneNumber(), name: CurrentUser.getNameForAsync(), view: self)
+                self.present(controller!, animated: true, completion: nil)
+            } else {
+                issueLabel.text = "Not all the fields were filled!" 
+            }
         } else {
-            issueLabel.text = "Not all the fields were filled!" 
+            let alert = UIAlertController(title: "Error!", message: "No Internet connection available", preferredStyle: .alert)
+            
+            // 3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

@@ -83,6 +83,7 @@ class CurrentUser {
     }
     
     static func setPassWord(passWord: String) {
+        print("the password is \(passWord.hash)")
         self.passWord = passWord
     }
     

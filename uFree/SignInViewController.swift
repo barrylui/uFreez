@@ -28,7 +28,18 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signInButtonClicked(button: UIButton) {
-        ConnectionManager.loginUser(userName: (userNameTextField?.text!)!, passWord: (passWordTextField?.text!)!, view: self)
+        let internetCheck = Reachability()
+        if (internetCheck.isInternetAvailable()) {
+            ConnectionManager.loginUser(userName: (userNameTextField?.text!)!, passWord: (passWordTextField?.text!)!, view: self)
+        } else {
+            let alert = UIAlertController(title: "Error!", message: "No Internet connection available", preferredStyle: .alert)
+            
+            // 3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
