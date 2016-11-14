@@ -108,6 +108,12 @@ class GenerateFreeFriendsTableViewController: UIViewController,  UITableViewDele
         }
     }
     
+    @IBAction func refreshButtonClicked(button: UIBarButtonItem) {
+        ConnectionManager.getAvailableFriends(username: CurrentUser.getUserName(), tableView: tableView, view: self)
+        tableView.clearsContextBeforeDrawing = true
+        tableView.reloadData()
+    }
+    
     private func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         // you need to implement this method too or you can't swipe to display the actions
