@@ -28,6 +28,8 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         if (CurrentUser.getAvailabilityOverride() == 1) {
             availabilitySwitch.setOn(false, animated: true)
+        } else {
+            availabilitySwitch.setOn(true, animated: true)
         }
         
         friendsTable!.delegate = self
@@ -132,8 +134,10 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func switchValueChanged(sender: UISwitch) {
         if sender.isOn {
             ConnectionManager.updateAvalabilityOverride(userName: CurrentUser.getUserName(), value: 0)
+            CurrentUser.setAvailabilityOverride(value: 0)
         } else {
-            ConnectionManager.updateAvalabilityOverride(userName: CurrentUser.getUserName(), value: 0)
+            ConnectionManager.updateAvalabilityOverride(userName: CurrentUser.getUserName(), value: 1)
+            CurrentUser.setAvailabilityOverride(value: 1)
         }
     }
     
