@@ -11,7 +11,8 @@ import Foundation
 class ConnectionManager {
     //private static let serverAddress = "http://localhost:8081/"
     private static let serverAddress = "https://ufreeserver.com:8443/"
-
+    private static let PASS_CODE = 200
+    private static let JSON_PASS_FAIL = "code"
     
     static func updateAvalabilityOverride(userName: String, value: Int) {
         let urlRequest = "\(serverAddress)setAvailableOverride/\(userName)/\(value)"
@@ -174,8 +175,8 @@ class ConnectionManager {
         task.resume()
         sem.wait(timeout: DispatchTime.distantFuture)
         //var dic: [String : AnyObject] = jsonObject as! [String : String] as [String : AnyObject]
-        let code = jsonObject["code"]
-        if (code as! Int  == 200) {
+        let code = jsonObject[JSON_PASS_FAIL]
+        if (code as! Int  == PASS_CODE) {
            addFriendRequest(userName: userName, friendName: friendName)
         } else {
             print("an error should be thrown here") // *******************
@@ -206,8 +207,8 @@ class ConnectionManager {
         task.resume()
         sem.wait(timeout: DispatchTime.distantFuture)
         //var dic: [String : AnyObject] = jsonObject as! [String : String] as [String : AnyObject]
-        let code = jsonObject["code"]
-        if (code as! Int  != 200) {
+        let code = jsonObject[JSON_PASS_FAIL]
+        if (code as! Int  != PASS_CODE) {
             let url = NSURL(string: (serverAddress+"createUser/"+userName+"/"+password+"/"+telephone+"/"+name))
             makeAsyncCall(url: url!)
             //addFriend(userName: userName, friendName: friendName)
