@@ -24,7 +24,7 @@ class FriendRequestTableViewController: UITableViewController {
         
         self.tableView.clearsContextBeforeDrawing = true
         ConnectionManager.getFriendsRequests(username: CurrentUser.getUserName(), tableView: self.tableView, view: self)
-        if (CurrentUser.getFriendRequestList().count == 0) {
+        if (CurrentUser.getFriendsList().count == 0) {
             let alert = UIAlertController(title: "Alert!", message: "There are no friend requests available at this time", preferredStyle: .alert)
             
             // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -52,22 +52,48 @@ class FriendRequestTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return CurrentUser.getFriendRequestList().count
+        print(CurrentUser.getFriendsList().count)
+        return CurrentUser.getFriendsList().count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "friend_request", for: indexPath) as! FriendRequestTableViewCell
-
-        cell.label.text = CurrentUser.getFriendRequestList()[indexPath.row]
-        cell.requester = CurrentUser.getFriendRequestList()[indexPath.row]
-        cell.table = self.tableView
-        
+        let cell: FriendsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath) as! FriendsTableViewCell
+        cell.friendsLabel.text = CurrentUser.getFriendsList()[indexPath.row]
+        print("here")
         return cell
     }
+    
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            let nameOfUser = CurrentUser.getFriendsList()[indexPath.row]
+            ConnectionManager.deleteFriend(userName: CurrentUser.getUserName(), friendName: nameOfUser)
+            CurrentUser.removeFromFriendsArray(index: indexPath.row)
+            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
+            //http request to make sure that user is removed from array
+        }
+    }
+
+
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return CurrentUser.getFriendRequestList().count
+//    }
+//
+//    
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "friend_request", for: indexPath) as! FriendRequestTableViewCell
+//
+//        cell.label.text = CurrentUser.getFriendRequestList()[indexPath.row]
+//        cell.requester = CurrentUser.getFriendRequestList()[indexPath.row]
+//        cell.table = self.tableView
+//        
+//        return cell
+//    }
  
 
     /*

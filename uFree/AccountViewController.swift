@@ -90,26 +90,33 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(CurrentUser.getFriendsList().count)
-        return CurrentUser.getFriendsList().count
+        return CurrentUser.getFriendRequestList().count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: FriendsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath) as! FriendsTableViewCell
-        cell.friendsLabel.text = CurrentUser.getFriendsList()[indexPath.row]
-        print("here")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "friend_request", for: indexPath) as! FriendRequestTableViewCell
+        
+        cell.label.text = CurrentUser.getFriendRequestList()[indexPath.row]
+        cell.requester = CurrentUser.getFriendRequestList()[indexPath.row]
+        cell.table = friendsTable
+        
         return cell
     }
-    
-     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
-            let nameOfUser = CurrentUser.getFriendsList()[indexPath.row]
-            ConnectionManager.deleteFriend(userName: CurrentUser.getUserName(), friendName: nameOfUser)
-            CurrentUser.removeFromFriendsArray(index: indexPath.row)
-            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
-            //http request to make sure that user is removed from array
-        }
-    }
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        print(CurrentUser.getFriendsList().count)
+//        return CurrentUser.getFriendsList().count
+//    }
+//    
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell: FriendsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath) as! FriendsTableViewCell
+//        cell.friendsLabel.text = CurrentUser.getFriendsList()[indexPath.row]
+//        print("here")
+//        return cell
+//    }
+
     
     @IBAction func addNewFriendButtonClicked(button: UIButton) {
         let alert = UIAlertController(title: "Add User", message: "Enter the user name of the friend you want to add", preferredStyle: .alert)
