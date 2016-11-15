@@ -10,7 +10,8 @@ import Foundation
 
 class ConnectionManager {
     //private static let serverAddress = "http://localhost:8081/"
-    private static let serverAddress = "http://uFree-Server-dev.us-west-2.elasticbeanstalk.com/"
+    private static let serverAddress = "https://ufreeserver.com:8443/"
+
     
     static func updateAvalabilityOverride(userName: String, value: Int) {
         let urlRequest = "\(serverAddress)setAvailableOverride/\(userName)/\(value)"
@@ -229,7 +230,6 @@ class ConnectionManager {
         var jsonObject = NSDictionary()
         let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
             do {
-                
                 jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
                 CurrentUser.initializeUser(unparsedUser: jsonObject as! [String : AnyObject], sem: sem)
                 //sem.signal()
