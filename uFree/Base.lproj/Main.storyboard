@@ -1315,7 +1315,7 @@
             </objects>
             <point key="canvasLocation" x="4480.8000000000002" y="1088.9055472263869"/>
         </scene>
-        <!--Friend Request Table View Controller-->
+        <!--Friend Requests-->
         <scene sceneID="Twz-7x-UnY">
             <objects>
                 <tableViewController id="vyU-4J-JFP" customClass="FriendRequestTableViewController" customModule="uFree" customModuleProvider="target" sceneMemberID="viewController">
@@ -1358,7 +1358,7 @@
                             <outlet property="delegate" destination="vyU-4J-JFP" id="Fau-fg-Ou4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="RP9-NC-aOi">
+                    <navigationItem key="navigationItem" title="Friend Requests" id="RP9-NC-aOi">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="ZtU-vz-AaN"/>
                     </navigationItem>
                     <connections>
