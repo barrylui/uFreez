@@ -94,7 +94,7 @@ class ConnectionManager {
         }
         task.resume()
         sem.wait(timeout: DispatchTime.distantFuture)
-        //tableView.reloadData()
+        tableView.reloadData()
     }
     
     private static func getJSONObjectFriendRequest(url: NSURL, tableView: UITableView, view:UIViewController) {

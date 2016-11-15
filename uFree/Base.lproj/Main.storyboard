@@ -461,11 +461,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="Available Friends" id="X6J-vj-aje">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="Hjx-MX-bWa"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Jrh-Vx-Uzt">
-                            <connections>
-                                <action selector="refreshButtonClickedWithButton:" destination="m3d-Iw-DyU" id="XRb-Nm-8T2"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="Hjx-MX-bWa" id="g2W-nz-3K6"/>

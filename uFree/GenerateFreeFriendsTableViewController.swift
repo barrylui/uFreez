@@ -117,8 +117,15 @@ class GenerateFreeFriendsTableViewController: UIViewController,  UITableViewDele
     }
     
     @IBAction func refreshButtonClicked(button: UIBarButtonItem) {
+        print("refreshed button clicked")
+        CurrentUser.sanitizeAvailableFriends()
         ConnectionManager.getAvailableFriends(username: CurrentUser.getUserName(), tableView: tableView, view: self)
-        tableView.clearsContextBeforeDrawing = true
+        print("count ", CurrentUser.getAvailableFriends().count)
+//        dispatch_get_main_queue().asynchronously(execute: {
+//            self.tableView.reloadData()
+//        });
+//        tableView.clearsContextBeforeDrawing = true
+        //self.reload
         tableView.reloadData()
     }
     
