@@ -9,7 +9,8 @@
 import Foundation
 
 class ConnectionManager {
-    private static let serverAddress = "http://uFree-Server-dev.us-west-2.elasticbeanstalk.com/"
+    private static let serverAddress = "http://localhost:8081/"
+    //private static let serverAddress = "http://uFree-Server-dev.us-west-2.elasticbeanstalk.com/"
     
     static func updateAvalabilityOverride(userName: String, value: Int) {
         let urlRequest = "\(serverAddress)setAvailableOverride/\(userName)/\(value)"
@@ -26,6 +27,11 @@ class ConnectionManager {
     
     static func deleteFriend(userName: String, friendName: String) {
         let url = NSURL(string: (serverAddress+"deleteFriend/"+userName+"/"+friendName))
+        makeAsyncCall(url: url!)
+    }
+    
+    static func addFriendRequest(userName: String, friendName: String) {
+        let url = NSURL(string: (serverAddress+"addFriendRequest/"+userName+"/"+friendName))
         makeAsyncCall(url: url!)
     }
     
@@ -58,6 +64,11 @@ class ConnectionManager {
         getJSONObjectFriends(url: url!, tableView: tableView, view: view)
     }
     
+    static func getFriendsRequests(username: String, tableView: UITableView, view:UIViewController) {
+        let url = NSURL(string: (serverAddress+"getFriendRequests/"+username))
+        getJSONObjectFriendRequest(url: url!, tableView: tableView, view: view)
+    }
+    
     private static func getJSONObjectFriends(url: NSURL, tableView: UITableView, view:UIViewController) {
         let sem = DispatchSemaphore(value: 0);
         
@@ -78,6 +89,28 @@ class ConnectionManager {
         sem.wait(timeout: DispatchTime.distantFuture)
         //tableView.reloadData()
     }
+    
+    private static func getJSONObjectFriendRequest(url: NSURL, tableView: UITableView, view:UIViewController) {
+        let sem = DispatchSemaphore(value: 0);
+        
+        var jsonObject = NSDictionary()
+        let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
+            do {
+                jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
+                print(jsonObject)
+                CurrentUser.sanitizeFriendRequests()
+                CurrentUser.setAvailableFriends(unparsedArray: jsonObject as! [String : AnyObject])
+                tableView.reloadData()
+                //print(tableView.ce)
+                sem.signal()
+            } catch {
+            }
+        }
+        task.resume()
+        sem.wait(timeout: DispatchTime.distantFuture)
+        //tableView.reloadData()
+    }
+
     
     private static func makeAsyncCall(url: NSURL) {
         let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
@@ -114,7 +147,7 @@ class ConnectionManager {
         //var dic: [String : AnyObject] = jsonObject as! [String : String] as [String : AnyObject]
         let code = jsonObject["code"]
         if (code as! Int  == 200) {
-           addFriend(userName: userName, friendName: friendName)
+           addFriendRequest(userName: userName, friendName: friendName)
         } else {
             print("an error should be thrown here") // *******************
             let alert = UIAlertController(title: "Error!", message: "The user you entered is not a valid user name!", preferredStyle: .alert)

@@ -25,6 +25,8 @@
 		05C88EA11DC6AFE300DFEDBF /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */; };
 		05F844641DD60C8000204509 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 05F844631DD60C8000204509 /* AppIcon.appiconset */; };
 		05F8446E1DD9483C00204509 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8446D1DD9483C00204509 /* Reachability.swift */; };
+		05F844701DDA8F9A00204509 /* FriendRequestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8446F1DDA8F9A00204509 /* FriendRequestTableViewController.swift */; };
+		05F844721DDA8FE500204509 /* FriendRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		05F844631DD60C8000204509 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		05F8446D1DD9483C00204509 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		05F8446F1DDA8F9A00204509 /* FriendRequestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewController.swift; sourceTree = "<group>"; };
+		05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,10 +97,12 @@
 				0513ABB31DC5008C000221D9 /* LangingPageViewController.swift */,
 				05F8446D1DD9483C00204509 /* Reachability.swift */,
 				0513ABAA1DC4FE20000221D9 /* SignInViewController.swift */,
-				0513ABB51DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift */,
 				0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */,
 				0513ABB91DC50764000221D9 /* AccountViewController.swift */,
 				05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */,
+				05F8446F1DDA8F9A00204509 /* FriendRequestTableViewController.swift */,
+				05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */,
+				0513ABB51DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift */,
 				052ECF4E1DD29728007AFAFA /* AvailableFriendTableViewCell.swift */,
 				0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */,
 				0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */,
@@ -194,6 +200,8 @@
 				0513ABB61DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift in Sources */,
 				0513AB991DC4FDC8000221D9 /* AppDelegate.swift in Sources */,
 				0513ABBA1DC50764000221D9 /* AccountViewController.swift in Sources */,
+				05F844721DDA8FE500204509 /* FriendRequestTableViewCell.swift in Sources */,
+				05F844701DDA8F9A00204509 /* FriendRequestTableViewController.swift in Sources */,
 				05C88EA11DC6AFE300DFEDBF /* FriendsTableViewCell.swift in Sources */,
 				0513ABAB1DC4FE20000221D9 /* SignInViewController.swift in Sources */,
 				052ECF4F1DD29728007AFAFA /* AvailableFriendTableViewCell.swift in Sources */,

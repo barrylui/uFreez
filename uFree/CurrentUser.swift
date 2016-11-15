@@ -16,6 +16,7 @@ class CurrentUser {
     private static var name = String()
     
     private static var friendsList = Array<String>()
+    private static var friendsRequestList = Array<String>()
     private static var schedule = Array<Array<Array<Array<Int>>>>()
     private static var phoneNumber = String()
     private static var availabilityOverride = Int()
@@ -28,6 +29,7 @@ class CurrentUser {
             passWord = unparsedUser["Password"] as! String
             name = (unparsedUser["FirstAndLastName"] as! String).replacingOccurrences(of: "_", with: " ", options: .literal, range: nil)
             friendsList = unparsedUser["FriendList"] as! [String]
+            friendsRequestList = unparsedUser["FriendRequestList"] as! [String]
             phoneNumber = unparsedUser["PhoneNumber"] as! String
             availabilityOverride = unparsedUser["AvailabileOverride"] as! Int
             loadSchedule(unparsedUser: unparsedUser)
@@ -52,6 +54,7 @@ class CurrentUser {
         passWord = String()
         name = String()
         friendsList = Array<String>()
+        friendsRequestList = Array<String>()
         phoneNumber = String()
         availabilityOverride = Int()
         availableFriends = Array<AvailableFriends>()
@@ -64,6 +67,15 @@ class CurrentUser {
     
     static func addToFriendsArray(friend: String) {
         friendsList.append(friend)
+    }
+    
+    static func addToFriendRequestArray(friend: String) {
+        friendsRequestList.append(friend)
+    }
+
+    static func removeFromFriendRequestArray(friend: String) {
+        let location  = friendsRequestList.index(of: friend)
+        friendsRequestList.remove(at: location!)
     }
     
     static func isUserInitialized() -> Bool {
@@ -124,17 +136,9 @@ class CurrentUser {
     }
     
     static func setAvailableFriends(unparsedArray: [String:AnyObject]) {
-        let unParsedArray = unparsedArray["sched"] as! [String]
+        let unParsedArray = unparsedArray["FriendRequests"] as! [String]
         for user in unParsedArray {
-            var arr = user.characters.split{$0 == "-"}.map(String.init)
-            print(arr)
-            var time = 0
-            if(arr[1] == "**15") {
-                time = -15
-            } else {
-                time = Int(arr[1])!
-            }
-            availableFriends.append(AvailableFriends(name: arr[0], time: time, phoneNumber: arr[2]))
+            friendsRequestList.append(user)
         }
     }
     
@@ -142,8 +146,16 @@ class CurrentUser {
         availableFriends = Array<AvailableFriends>()
     }
     
+    static func sanitizeFriendRequests() {
+        availableFriends = Array<AvailableFriends>()
+    }
+    
     static func getAvailableFriends() -> Array<AvailableFriends>{
         return availableFriends
+    }
+    
+    static func getFriendRequestList() -> Array<String> {
+        return friendsRequestList
     }
     
     private static func loadSchedule(unparsedUser: [String:AnyObject]) {
