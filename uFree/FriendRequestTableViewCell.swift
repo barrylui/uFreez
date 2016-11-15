@@ -28,7 +28,8 @@ class FriendRequestTableViewCell: UITableViewCell {
         ConnectionManager.addFriend(userName: CurrentUser.getUserName(), friendName: requester)
         ConnectionManager.addFriend(userName: requester, friendName: CurrentUser.getUserName())
         CurrentUser.addToFriendsArray(friend: requester)
-        CurrentUser.removeFromFriendRequestArray(friend: requester)
+        var location = CurrentUser.getFriendRequestList().index(of: requester)
+        CurrentUser.removeFromFriendRequestArray(location: location!)
         table.reloadData()
     }
 }

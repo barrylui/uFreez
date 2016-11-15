@@ -185,7 +185,8 @@ class ConnectionManager {
                
             }))
             view.present(alert, animated: true, completion: nil)
-            CurrentUser.removeFromFriendsArray(index: CurrentUser.getFriendsList().count-1)
+            print()
+            //CurrentUser.removeFromFriendRequestArray(location: CurrentUser.getFriendsList().count-1)
         }
     }
     
@@ -228,6 +229,7 @@ class ConnectionManager {
         var jsonObject = NSDictionary()
         let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
             do {
+                
                 jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
                 CurrentUser.initializeUser(unparsedUser: jsonObject as! [String : AnyObject], sem: sem)
                 //sem.signal()

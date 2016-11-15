@@ -73,9 +73,8 @@ class CurrentUser {
         friendsRequestList.append(friend)
     }
 
-    static func removeFromFriendRequestArray(friend: String) {
-        let location  = friendsRequestList.index(of: friend)
-        friendsRequestList.remove(at: location!)
+    static func removeFromFriendRequestArray(location: Int) {
+        friendsRequestList.remove(at: location)
     }
     
     static func isUserInitialized() -> Bool {

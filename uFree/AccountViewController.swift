@@ -119,11 +119,11 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
             textField.text = ""
         }
         // 3. Grab the value from the text field, and print it when the user clicks OK.
-        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "Send Friend Request", style: .default, handler: { (_) in
             let textField = alert.textFields![0] // Force unwrapping because we know it exists.
             if (textField.text != "") {
                 //CurrentUser.addToFriendsArray(friend: textField.text!)
-                ConnectionManager.addFriendRequest(userName: CurrentUser.getUserName(), friendName: textField.text!)
+                ConnectionManager.addFriendWithCheck(userName: CurrentUser.getUserName(), friendName: textField.text!, view: self)
                 self.friendsTable.reloadData()
             }
         }))
