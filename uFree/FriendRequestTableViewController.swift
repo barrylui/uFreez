@@ -24,6 +24,15 @@ class FriendRequestTableViewController: UITableViewController {
         
         self.tableView.clearsContextBeforeDrawing = true
         ConnectionManager.getFriendsRequests(username: CurrentUser.getUserName(), tableView: self.tableView, view: self)
+        if (CurrentUser.getFriendRequestList().count == 0) {
+            let alert = UIAlertController(title: "Alert!", message: "There are no friend requests available at this time", preferredStyle: .alert)
+            
+            // 3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+        }
         print("number", CurrentUser.getFriendRequestList().count)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
