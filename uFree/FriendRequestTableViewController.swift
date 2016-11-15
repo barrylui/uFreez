@@ -21,8 +21,10 @@ class FriendRequestTableViewController: UITableViewController {
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-
+        
+        self.tableView.clearsContextBeforeDrawing = true
         ConnectionManager.getFriendsRequests(username: CurrentUser.getUserName(), tableView: self.tableView, view: self)
+        print("number", CurrentUser.getFriendRequestList().count)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

@@ -1260,6 +1260,14 @@
                                     <action selector="switchValueChangedWithSender:" destination="8vA-GF-e62" eventType="touchUpInside" id="Bt9-Fy-ptt"/>
                                 </connections>
                             </switch>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7kN-ys-tRX">
+                                <rect key="frame" x="204" y="316" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="refreshFriendButtonClickedWithButton:" destination="8vA-GF-e62" eventType="touchUpInside" id="QzE-ef-ELa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1324,16 +1332,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ss-cr-sMc">
-                                            <rect key="frame" x="15" y="0.0" width="208" height="21"/>
+                                            <rect key="frame" x="15" y="0.0" width="238" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eud-jB-Hgv">
-                                            <rect key="frame" x="290" y="-5" width="46" height="48"/>
+                                            <rect key="frame" x="276" y="-5" width="75" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
+                                            <state key="normal" title="Add Friend"/>
                                             <connections>
                                                 <action selector="approveFriendRequestWithButton:" destination="Agc-no-EcQ" eventType="touchUpInside" id="rAg-Z0-R22"/>
                                             </connections>

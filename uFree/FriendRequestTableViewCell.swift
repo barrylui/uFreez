@@ -26,6 +26,7 @@ class FriendRequestTableViewCell: UITableViewCell {
 
     @IBAction func approveFriendRequest(button: UIButton) {
         ConnectionManager.addFriend(userName: CurrentUser.getUserName(), friendName: requester)
+        ConnectionManager.addFriend(userName: requester, friendName: CurrentUser.getUserName())
         CurrentUser.addToFriendsArray(friend: requester)
         CurrentUser.removeFromFriendRequestArray(friend: requester)
         table.reloadData()

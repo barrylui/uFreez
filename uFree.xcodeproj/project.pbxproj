@@ -95,7 +95,6 @@
 				0513ABA11DC4FDC8000221D9 /* LaunchScreen.storyboard */,
 				0513ABA41DC4FDC8000221D9 /* Info.plist */,
 				0513ABB31DC5008C000221D9 /* LangingPageViewController.swift */,
-				05F8446D1DD9483C00204509 /* Reachability.swift */,
 				0513ABAA1DC4FE20000221D9 /* SignInViewController.swift */,
 				0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */,
 				0513ABB91DC50764000221D9 /* AccountViewController.swift */,
@@ -104,9 +103,10 @@
 				05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */,
 				0513ABB51DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift */,
 				052ECF4E1DD29728007AFAFA /* AvailableFriendTableViewCell.swift */,
+				05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */,
 				0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */,
 				0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */,
-				05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */,
+				05F8446D1DD9483C00204509 /* Reachability.swift */,
 			);
 			path = uFree;
 			sourceTree = "<group>";

@@ -79,6 +79,10 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    @IBAction func refreshFriendButtonClicked(button: UIButton) {
+        ConnectionManager.getFriends(username: CurrentUser.getUserName(), tableView: friendsTable, view: self)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -86,6 +90,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        print(CurrentUser.getFriendsList().count)
         return CurrentUser.getFriendsList().count
     }
     
@@ -118,7 +123,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
             let textField = alert.textFields![0] // Force unwrapping because we know it exists.
             if (textField.text != "") {
                 //CurrentUser.addToFriendsArray(friend: textField.text!)
-                ConnectionManager.addFriendWithCheck(userName: CurrentUser.getUserName(), friendName: textField.text!, view: self)
+                ConnectionManager.addFriendRequest(userName: CurrentUser.getUserName(), friendName: textField.text!)
                 self.friendsTable.reloadData()
             }
         }))

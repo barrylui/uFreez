@@ -136,9 +136,35 @@ class CurrentUser {
     }
     
     static func setAvailableFriends(unparsedArray: [String:AnyObject]) {
+        let unParsedArray = unparsedArray["sched"] as! [String]
+        for user in unParsedArray {
+            var arr = user.characters.split{$0 == "-"}.map(String.init)
+            print(arr)
+            var time = 0
+            if(arr[1] == "**15") {
+                time = -15
+            } else {
+                time = Int(arr[1])!
+            }
+            availableFriends.append(AvailableFriends(name: arr[0], time: time, phoneNumber: arr[2]))
+        }
+    }
+    
+    static func setAvailableFriendRequest(unparsedArray: [String:AnyObject]) {
+        print(unparsedArray)
         let unParsedArray = unparsedArray["FriendRequests"] as! [String]
         for user in unParsedArray {
+            print(user)
             friendsRequestList.append(user)
+        }
+    }
+    
+    static func setFriendsList(unparsedArray: [String:AnyObject]) {
+        print(unparsedArray)
+        let unParsedArray = unparsedArray["Friends"] as! [String]
+        for user in unParsedArray {
+            print(user)
+            friendsList.append(user)
         }
     }
     
@@ -146,8 +172,12 @@ class CurrentUser {
         availableFriends = Array<AvailableFriends>()
     }
     
+    static func sanitizeFriends() {
+        friendsList = Array<String>()
+    }
+    
     static func sanitizeFriendRequests() {
-        availableFriends = Array<AvailableFriends>()
+        friendsRequestList = Array<String>()
     }
     
     static func getAvailableFriends() -> Array<AvailableFriends>{

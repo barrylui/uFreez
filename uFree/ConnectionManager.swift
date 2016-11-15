@@ -69,6 +69,13 @@ class ConnectionManager {
         getJSONObjectFriendRequest(url: url!, tableView: tableView, view: view)
     }
     
+    static func getFriends(username: String, tableView: UITableView, view:UIViewController) {
+        let url = NSURL(string: (serverAddress+"getFriends/"+username))
+        getJSONObjectFriendsList(url: url!, tableView: tableView, view: view)
+        tableView.clearsContextBeforeDrawing = true
+        tableView.reloadData()
+    }
+    
     private static func getJSONObjectFriends(url: NSURL, tableView: UITableView, view:UIViewController) {
         let sem = DispatchSemaphore(value: 0);
         
@@ -99,7 +106,7 @@ class ConnectionManager {
                 jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
                 print(jsonObject)
                 CurrentUser.sanitizeFriendRequests()
-                CurrentUser.setAvailableFriends(unparsedArray: jsonObject as! [String : AnyObject])
+                CurrentUser.setAvailableFriendRequest(unparsedArray: jsonObject as! [String : AnyObject])
                 tableView.reloadData()
                 //print(tableView.ce)
                 sem.signal()
@@ -111,6 +118,27 @@ class ConnectionManager {
         //tableView.reloadData()
     }
 
+    
+    private static func getJSONObjectFriendsList(url: NSURL, tableView: UITableView, view:UIViewController) {
+        let sem = DispatchSemaphore(value: 0);
+        
+        var jsonObject = NSDictionary()
+        let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
+            do {
+                jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
+                print(jsonObject)
+                CurrentUser.sanitizeFriends()
+                CurrentUser.setFriendsList(unparsedArray: jsonObject as! [String : AnyObject])
+                tableView.reloadData()
+                //print(tableView.ce)
+                sem.signal()
+            } catch {
+            }
+        }
+        task.resume()
+        sem.wait(timeout: DispatchTime.distantFuture)
+        tableView.reloadData()
+    }
     
     private static func makeAsyncCall(url: NSURL) {
         let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
