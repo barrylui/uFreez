@@ -9,8 +9,8 @@
 import Foundation
 
 class ConnectionManager {
-    private static let serverAddress = "http://localhost:8081/"
-    //private static let serverAddress = "http://uFree-Server-dev.us-west-2.elasticbeanstalk.com/"
+    //private static let serverAddress = "http://localhost:8081/"
+    private static let serverAddress = "http://uFree-Server-dev.us-west-2.elasticbeanstalk.com/"
     
     static func updateAvalabilityOverride(userName: String, value: Int) {
         let urlRequest = "\(serverAddress)setAvailableOverride/\(userName)/\(value)"
