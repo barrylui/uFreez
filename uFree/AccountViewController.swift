@@ -55,6 +55,16 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.present(controller!, animated: true, completion: nil)
         ConnectionManager.setDeviceAvailibility(userName: CurrentUser.getUserName(), bool: "false")
         CurrentUser.sanitizeFields()
+        sanitizeUserData()
+    }
+    
+    private func sanitizeUserData() {
+        let defaults = UserDefaults.standard
+        
+        defaults.setValue(nil, forKey: "UserName")
+        defaults.setValue(nil, forKey: "Password")
+        
+        defaults.synchronize()
     }
     
     @IBAction func saveButtonClicked(button:UIBarButtonItem) {

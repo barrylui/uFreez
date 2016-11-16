@@ -18,8 +18,24 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         userNameTextField!.delegate = self
         passWordTextField!.delegate = self
+        
+
 
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        
+        if (isUserDataStores()) {
+            print("user data was stored")
+            ConnectionManager.loginUser(userName: defaults.string(forKey: "UserName")!
+                , passWord: (defaults.string(forKey: "Password"))!, view: self)
+            //            let controller = self.storyboard?.instantiateViewController(withIdentifier: "sw_reveal")
+            //            self.present(controller!, animated: true, completion: nil)
+        } else {
+            print("user data isnt stored")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +46,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func signInButtonClicked(button: UIButton) {
         let internetCheck = Reachability()
         if (internetCheck.isInternetAvailable()) {
+
             ConnectionManager.loginUser(userName: (userNameTextField?.text!)!, passWord: (passWordTextField?.text!)!, view: self)
             ConnectionManager.setDeviceToken(userName: (userNameTextField?.text!)!, token: CurrentUser.getDeviceToken())
         } else {
@@ -41,6 +58,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    private func isUserDataStores() -> Bool {
+        let defaults = UserDefaults.standard
+        return !(defaults.string(forKey: "UserName") == nil) && !(defaults.string(forKey: "Password") == nil)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

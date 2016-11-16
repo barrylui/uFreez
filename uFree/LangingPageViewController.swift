@@ -15,6 +15,8 @@ class LangingPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        storeUserData()
         welcomeLabel.text = "Hello \(CurrentUser.getName())"
         
         if self.revealViewController() != nil {
@@ -30,6 +32,15 @@ class LangingPageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    private func storeUserData() {
+        let defaults = UserDefaults.standard
+        print("storing the data")
+        defaults.setValue(CurrentUser.getUserName(), forKey: "UserName")
+        defaults.setValue(CurrentUser.getPassWord(), forKey: "Password")
+        
+        defaults.synchronize()
+    }
 
     /*
     // MARK: - Navigation
