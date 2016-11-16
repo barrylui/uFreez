@@ -21,6 +21,8 @@ class CurrentUser {
     private static var phoneNumber = String()
     private static var availabilityOverride = Int()
     
+    private static var deviceToken = String()
+    
     private static var availableFriends = Array<AvailableFriends>()
     
     static func initializeUser(unparsedUser: [String:AnyObject], sem: DispatchSemaphore) {
@@ -59,6 +61,15 @@ class CurrentUser {
         availabilityOverride = Int()
         availableFriends = Array<AvailableFriends>()
         schedule = Array<Array<Array<Array<Int>>>>()
+        deviceToken = String()
+    }
+    
+    static func setDeviceToken(token: String) {
+        self.deviceToken = token
+    }
+    
+    static func getDeviceToken() -> String {
+        return deviceToken
     }
     
     static func removeFromFriendsArray(index: Int) {

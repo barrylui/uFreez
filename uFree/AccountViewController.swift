@@ -53,6 +53,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func signOutButtonClicked(butto: UIBarButtonItem) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "login_page")
         self.present(controller!, animated: true, completion: nil)
+        ConnectionManager.setDeviceAvailibility(userName: CurrentUser.getUserName(), bool: "false")
         CurrentUser.sanitizeFields()
     }
     
@@ -80,7 +81,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     @IBAction func refreshFriendButtonClicked(button: UIButton) {
-        ConnectionManager.getFriends(username: CurrentUser.getUserName(), tableView: friendsTable, view: self)
+        ConnectionManager.getFriendsRequests(username: CurrentUser.getUserName(), tableView: friendsTable, view: self)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

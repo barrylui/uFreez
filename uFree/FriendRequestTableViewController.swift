@@ -23,7 +23,7 @@ class FriendRequestTableViewController: UITableViewController {
         }
         
         self.tableView.clearsContextBeforeDrawing = true
-        ConnectionManager.getFriendsRequests(username: CurrentUser.getUserName(), tableView: self.tableView, view: self)
+        ConnectionManager.getFriends(username: CurrentUser.getUserName(), tableView: self.tableView, view: self)
         if (CurrentUser.getFriendsList().count == 0) {
             let alert = UIAlertController(title: "Alert!", message: "There are no friend requests available at this time", preferredStyle: .alert)
             

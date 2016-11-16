@@ -14,6 +14,33 @@ class ConnectionManager {
     private static let PASS_CODE = 200
     private static let JSON_PASS_FAIL = "code"
     
+    static func sendFriendAcceptedNotification(userName: String, friend: String) {
+        let urlRequest = "\(serverAddress)sendPushAcceptedFriendRequest/\(userName)/\(friend)"
+        let url = NSURL(string: urlRequest)
+        makeAsyncCall(url: url!)
+    }
+    
+    static func sendFriendAddedNotification(userName: String, friend: String) {
+        let urlRequest = "\(serverAddress)sendPushFriendRequest/\(userName)/\(friend)"
+        let url = NSURL(string: urlRequest)
+        makeAsyncCall(url: url!)
+    }
+    
+    static func setDeviceAvailibility(userName: String, bool: String) {
+        let urlRequest = "\(serverAddress)setDeviceAvailability/\(userName)/\(bool)"
+        print("asyn sent", urlRequest)
+        let url = NSURL(string: urlRequest)
+        makeAsyncCall(url: url!)
+    }
+    
+    static func setDeviceToken(userName: String, token: String) {
+        let urlRequest = "\(serverAddress)setDeviceToken/\(userName)/\(token)"
+        print("asyn sent", urlRequest)
+        let url = NSURL(string: urlRequest)
+        makeAsyncCall(url: url!)
+        setDeviceAvailibility(userName: userName, bool: "true")
+    }
+    
     static func updateAvalabilityOverride(userName: String, value: Int) {
         let urlRequest = "\(serverAddress)setAvailableOverride/\(userName)/\(value)"
         let url = NSURL(string: urlRequest)
@@ -177,7 +204,8 @@ class ConnectionManager {
         //var dic: [String : AnyObject] = jsonObject as! [String : String] as [String : AnyObject]
         let code = jsonObject[JSON_PASS_FAIL]
         if (code as! Int  == PASS_CODE) {
-           addFriendRequest(userName: userName, friendName: friendName)
+            addFriendRequest(userName: userName, friendName: friendName)
+            sendFriendAddedNotification(userName: userName, friend: friendName)
         } else {
             print("an error should be thrown here") // *******************
             let alert = UIAlertController(title: "Error!", message: "The user you entered is not a valid user name!", preferredStyle: .alert)
