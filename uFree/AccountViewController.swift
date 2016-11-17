@@ -42,7 +42,12 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         userNameLabel.text = CurrentUser.getUserName()
         passWordTextField.text = CurrentUser.getPassWord()
         phoneNumberTextField.text = CurrentUser.getPhoneNumber()
+        ConnectionManager.getFriendsRequests(username: CurrentUser.getUserName(), tableView: friendsTable, view: self)
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,6 +95,8 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    
+    // deprecated due to unstability of the program
     @IBAction func refreshFriendButtonClicked(button: UIButton) {
         ConnectionManager.getFriendsRequests(username: CurrentUser.getUserName(), tableView: friendsTable, view: self)
     }
