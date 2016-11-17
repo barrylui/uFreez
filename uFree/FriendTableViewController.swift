@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FriendRequestTableViewController: UITableViewController {
+class FriendTableViewController: UITableViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     //@IBOutlet var tableView: UITableView!
     

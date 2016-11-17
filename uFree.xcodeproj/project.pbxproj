@@ -19,13 +19,13 @@
 		0513ABB81DC506DD000221D9 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */; };
 		0513ABBA1DC50764000221D9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABB91DC50764000221D9 /* AccountViewController.swift */; };
 		052ECF4F1DD29728007AFAFA /* AvailableFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052ECF4E1DD29728007AFAFA /* AvailableFriendTableViewCell.swift */; };
+		0531F7451DDE2D97002B44FE /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531F7441DDE2D97002B44FE /* FriendTableViewController.swift */; };
 		0585DB1C1DC53B1800A7F4BE /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */; };
 		0585DB1E1DC54D2300A7F4BE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */; };
 		05C88E9D1DC6981B00DFEDBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */; };
 		05C88EA11DC6AFE300DFEDBF /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */; };
 		05F844641DD60C8000204509 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 05F844631DD60C8000204509 /* AppIcon.appiconset */; };
 		05F8446E1DD9483C00204509 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8446D1DD9483C00204509 /* Reachability.swift */; };
-		05F844701DDA8F9A00204509 /* FriendRequestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8446F1DDA8F9A00204509 /* FriendRequestTableViewController.swift */; };
 		05F844721DDA8FE500204509 /* FriendRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,13 +46,13 @@
 		0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		0513ABB91DC50764000221D9 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		052ECF4E1DD29728007AFAFA /* AvailableFriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableFriendTableViewCell.swift; sourceTree = "<group>"; };
+		0531F7441DDE2D97002B44FE /* FriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		05F844631DD60C8000204509 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 		05F8446D1DD9483C00204509 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		05F8446F1DDA8F9A00204509 /* FriendRequestTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewController.swift; sourceTree = "<group>"; };
 		05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewCell.swift; sourceTree = "<group>"; };
 		05F844731DDBA64700204509 /* uFree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uFree.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,9 +100,9 @@
 				0513ABAA1DC4FE20000221D9 /* SignInViewController.swift */,
 				0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */,
 				0513ABB91DC50764000221D9 /* AccountViewController.swift */,
-				05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */,
-				05F8446F1DDA8F9A00204509 /* FriendRequestTableViewController.swift */,
 				05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */,
+				0531F7441DDE2D97002B44FE /* FriendTableViewController.swift */,
+				05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */,
 				0513ABB51DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift */,
 				052ECF4E1DD29728007AFAFA /* AvailableFriendTableViewCell.swift */,
 				05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */,
@@ -208,7 +208,6 @@
 				0513AB991DC4FDC8000221D9 /* AppDelegate.swift in Sources */,
 				0513ABBA1DC50764000221D9 /* AccountViewController.swift in Sources */,
 				05F844721DDA8FE500204509 /* FriendRequestTableViewCell.swift in Sources */,
-				05F844701DDA8F9A00204509 /* FriendRequestTableViewController.swift in Sources */,
 				05C88EA11DC6AFE300DFEDBF /* FriendsTableViewCell.swift in Sources */,
 				0513ABAB1DC4FE20000221D9 /* SignInViewController.swift in Sources */,
 				052ECF4F1DD29728007AFAFA /* AvailableFriendTableViewCell.swift in Sources */,
@@ -216,6 +215,7 @@
 				0513ABB81DC506DD000221D9 /* ScheduleViewController.swift in Sources */,
 				0585DB1C1DC53B1800A7F4BE /* ConnectionManager.swift in Sources */,
 				0513ABB41DC5008C000221D9 /* LangingPageViewController.swift in Sources */,
+				0531F7451DDE2D97002B44FE /* FriendTableViewController.swift in Sources */,
 				0585DB1E1DC54D2300A7F4BE /* CurrentUser.swift in Sources */,
 				0513ABB01DC4FE6C000221D9 /* SWRevealViewController.m in Sources */,
 				05F8446E1DD9483C00204509 /* Reachability.swift in Sources */,
