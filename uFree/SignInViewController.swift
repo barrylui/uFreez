@@ -31,10 +31,12 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             print("user data was stored")
             ConnectionManager.loginUser(userName: defaults.string(forKey: "UserName")!
                 , passWord: (defaults.string(forKey: "Password"))!, view: self)
+            ConnectionManager.setDeviceToken(userName: (userNameTextField?.text!)!, token: CurrentUser.getDeviceToken())
             //            let controller = self.storyboard?.instantiateViewController(withIdentifier: "sw_reveal")
             //            self.present(controller!, animated: true, completion: nil)
         } else {
             print("user data isnt stored")
+            ConnectionManager.setDeviceToken(userName: (userNameTextField?.text!)!, token: CurrentUser.getDeviceToken())
         }
     }
 

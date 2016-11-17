@@ -112,7 +112,7 @@ class ConnectionManager {
         let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
             do {
                 jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
-                print(jsonObject)
+                //print(jsonObject)
                 CurrentUser.sanitizeAvailableFriends()
                 CurrentUser.setAvailableFriends(unparsedArray: jsonObject as! [String : AnyObject])
                 tableView.reloadData()
@@ -133,7 +133,7 @@ class ConnectionManager {
         let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
             do {
                 jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
-                print(jsonObject)
+                //print(jsonObject)
                 CurrentUser.sanitizeFriendRequests()
                 CurrentUser.setAvailableFriendRequest(unparsedArray: jsonObject as! [String : AnyObject])
                 tableView.reloadData()
@@ -155,7 +155,7 @@ class ConnectionManager {
         let task = URLSession.shared.dataTask(with: url as URL) { (data, response, error) in
             do {
                 jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
-                print(jsonObject)
+                //print(jsonObject)
                 CurrentUser.sanitizeFriends()
                 CurrentUser.setFriendsList(unparsedArray: jsonObject as! [String : AnyObject])
                 tableView.reloadData()
@@ -182,7 +182,7 @@ class ConnectionManager {
     static func loginUser(userName: String, passWord: String, view: UIViewController) {
         let url = NSURL(string: (serverAddress+"login/"+userName+"/"+passWord))
         let preParsedUserInfo = getJSONObject(url: url!, view: view)
-        print(preParsedUserInfo)
+        //print(preParsedUserInfo)
         
         //CurrentUser.initializeUser(upresentViewController(nextViewController, animated: true, completion: nil)nparsedUser: preParsedUserInfo as! [String : AnyObject])
     }

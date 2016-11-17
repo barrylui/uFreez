@@ -61,7 +61,7 @@ class CurrentUser {
         availabilityOverride = Int()
         availableFriends = Array<AvailableFriends>()
         schedule = Array<Array<Array<Array<Int>>>>()
-        deviceToken = String()
+        //deviceToken = String()
     }
     
     static func setDeviceToken(token: String) {
