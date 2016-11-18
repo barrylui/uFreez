@@ -114,7 +114,6 @@
 		05E2720F1DD3CE7D00676BAF /* TableInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableInterfaceController.swift; sourceTree = "<group>"; };
 		05E272111DD3CF5600676BAF /* ConnectionManagerWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManagerWatch.swift; sourceTree = "<group>"; };
 		05E272131DD3CF5C00676BAF /* CurrentUserWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserWatch.swift; sourceTree = "<group>"; };
-		05F844681DD8239200204509 /* uFreeWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uFreeWatch.entitlements; sourceTree = "<group>"; };
 		05F8446B1DD82B6B00204509 /* Settings-Watch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-Watch.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,7 +193,6 @@
 		05E271E51DD3CBC500676BAF /* uFreeWatch */ = {
 			isa = PBXGroup;
 			children = (
-				05F844681DD8239200204509 /* uFreeWatch.entitlements */,
 				05E271E61DD3CBC500676BAF /* Interface.storyboard */,
 				05E271E91DD3CBC500676BAF /* Assets.xcassets */,
 				05E271EB1DD3CBC500676BAF /* Info.plist */,
