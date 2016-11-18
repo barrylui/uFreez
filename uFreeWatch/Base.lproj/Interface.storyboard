@@ -1,15 +1,55 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="uFreeWatch" customModuleProvider="target">
+                    <items>
+                        <label width="136" height="72" alignment="left" text="Welcome to uFree Watch Edition" textAlignment="center" numberOfLines="2" id="CU0-3N-JXP"/>
+                        <button width="1" alignment="left" title="Find Free Friends" id="ijw-mb-aC8">
+                            <connections>
+                                <segue destination="X7E-ex-HIv" kind="push" id="5Ak-7g-adm"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
             </objects>
+        </scene>
+        <!--Table Interface Controller-->
+        <scene sceneID="0kI-wT-a7t">
+            <objects>
+                <controller id="X7E-ex-HIv" customClass="TableInterfaceController" customModule="uFreeWatch_Extension">
+                    <items>
+                        <table alignment="left" id="fZy-cJ-7xG">
+                            <items>
+                                <tableRow identifier="MainRowType" selectable="NO" id="7Bv-8L-4j0" customClass="cell" customModule="uFreeWatch_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="JAX-Jc-nmr">
+                                        <items>
+                                            <label width="133" height="38" alignment="left" text="Label" id="hpx-7S-69Z"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="label" destination="hpx-7S-69Z" id="Wpl-Te-0vw"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="tableView" destination="fZy-cJ-7xG" id="vKu-d7-yup"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="404" y="84"/>
         </scene>
     </scenes>
 </document>
