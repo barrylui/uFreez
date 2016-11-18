@@ -15,6 +15,7 @@ class TableInterfaceController: WKInterfaceController {
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        print(isUserDataStored())
         ConnectionManagerWatch.getAvailableFriends(username: "omer")
         tableView.setNumberOfRows(CurrentUserWatch.getFriendsList().count, withRowType: "MainRowType")
         print("set number of rows", CurrentUserWatch.getFriendsList().count)
@@ -24,6 +25,11 @@ class TableInterfaceController: WKInterfaceController {
         }
         
         // Configure interface objects here.
+    }
+    
+    private func isUserDataStored() -> Bool {
+        let defaults = UserDefaults.standard
+        return !(defaults.string(forKey: "UserName") == nil) && !(defaults.string(forKey: "Password") == nil)
     }
     
     override func willActivate() {

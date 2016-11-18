@@ -119,6 +119,7 @@
 		05F8446D1DD9483C00204509 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewCell.swift; sourceTree = "<group>"; };
 		05F844731DDBA64700204509 /* uFree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uFree.entitlements; sourceTree = "<group>"; };
+		05FB1B461DDFAE6A00FA89C5 /* uFreeWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uFreeWatch.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +202,7 @@
 		05BF39851DDF688100102456 /* uFreeWatch */ = {
 			isa = PBXGroup;
 			children = (
+				05FB1B461DDFAE6A00FA89C5 /* uFreeWatch.entitlements */,
 				05BF39861DDF688100102456 /* Interface.storyboard */,
 				05BF39891DDF688100102456 /* Assets.xcassets */,
 				05BF398B1DDF688100102456 /* Info.plist */,
@@ -304,6 +306,11 @@
 						DevelopmentTeam = 539HM634PU;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					05BF398F1DDF688100102456 = {
 						CreatedOnToolsVersion = 8.1;
