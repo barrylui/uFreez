@@ -22,12 +22,61 @@
 		0531F7451DDE2D97002B44FE /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531F7441DDE2D97002B44FE /* FriendTableViewController.swift */; };
 		0585DB1C1DC53B1800A7F4BE /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */; };
 		0585DB1E1DC54D2300A7F4BE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */; };
+		05BF39881DDF688100102456 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BF39861DDF688100102456 /* Interface.storyboard */; };
+		05BF398A1DDF688100102456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BF39891DDF688100102456 /* Assets.xcassets */; };
+		05BF39911DDF688100102456 /* uFreeWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05BF39901DDF688100102456 /* uFreeWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		05BF39961DDF688100102456 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF39951DDF688100102456 /* InterfaceController.swift */; };
+		05BF39981DDF688100102456 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BF39971DDF688100102456 /* ExtensionDelegate.swift */; };
+		05BF399A1DDF688100102456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BF39991DDF688100102456 /* Assets.xcassets */; };
+		05BF399E1DDF688100102456 /* uFreeWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 05BF39841DDF688100102456 /* uFreeWatch.app */; };
 		05C88E9D1DC6981B00DFEDBF /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */; };
 		05C88EA11DC6AFE300DFEDBF /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */; };
 		05F844641DD60C8000204509 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 05F844631DD60C8000204509 /* AppIcon.appiconset */; };
 		05F8446E1DD9483C00204509 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8446D1DD9483C00204509 /* Reachability.swift */; };
 		05F844721DDA8FE500204509 /* FriendRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		05BF39921DDF688100102456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0513AB8D1DC4FDC8000221D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05BF398F1DDF688100102456;
+			remoteInfo = "uFreeWatch Extension";
+		};
+		05BF399C1DDF688100102456 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0513AB8D1DC4FDC8000221D9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 05BF39831DDF688100102456;
+			remoteInfo = uFreeWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		05BF39A41DDF688100102456 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				05BF39911DDF688100102456 /* uFreeWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05BF39A61DDF688100102456 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				05BF399E1DDF688100102456 /* uFreeWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0509B1CC1DCE7A2300A07055 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = menu.imageset/Images.xcassets; sourceTree = "<group>"; };
@@ -49,6 +98,15 @@
 		0531F7441DDE2D97002B44FE /* FriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		05BF39841DDF688100102456 /* uFreeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uFreeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05BF39871DDF688100102456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		05BF39891DDF688100102456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05BF398B1DDF688100102456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05BF39901DDF688100102456 /* uFreeWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "uFreeWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05BF39951DDF688100102456 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		05BF39971DDF688100102456 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		05BF39991DDF688100102456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		05BF399B1DDF688100102456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05C88E9C1DC6981B00DFEDBF /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		05C88EA01DC6AFE300DFEDBF /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		05F844631DD60C8000204509 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
@@ -65,6 +123,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05BF398D1DDF688100102456 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -72,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				0513AB971DC4FDC8000221D9 /* uFree */,
+				05BF39851DDF688100102456 /* uFreeWatch */,
+				05BF39941DDF688100102456 /* uFreeWatch Extension */,
 				0513AB961DC4FDC8000221D9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				0513AB951DC4FDC8000221D9 /* uFree.app */,
+				05BF39841DDF688100102456 /* uFreeWatch.app */,
+				05BF39901DDF688100102456 /* uFreeWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -123,6 +192,27 @@
 			name = SWRevealViewController;
 			sourceTree = "<group>";
 		};
+		05BF39851DDF688100102456 /* uFreeWatch */ = {
+			isa = PBXGroup;
+			children = (
+				05BF39861DDF688100102456 /* Interface.storyboard */,
+				05BF39891DDF688100102456 /* Assets.xcassets */,
+				05BF398B1DDF688100102456 /* Info.plist */,
+			);
+			path = uFreeWatch;
+			sourceTree = "<group>";
+		};
+		05BF39941DDF688100102456 /* uFreeWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				05BF39951DDF688100102456 /* InterfaceController.swift */,
+				05BF39971DDF688100102456 /* ExtensionDelegate.swift */,
+				05BF39991DDF688100102456 /* Assets.xcassets */,
+				05BF399B1DDF688100102456 /* Info.plist */,
+			);
+			path = "uFreeWatch Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -133,15 +223,51 @@
 				0513AB911DC4FDC8000221D9 /* Sources */,
 				0513AB921DC4FDC8000221D9 /* Frameworks */,
 				0513AB931DC4FDC8000221D9 /* Resources */,
+				05BF39A61DDF688100102456 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				05BF399D1DDF688100102456 /* PBXTargetDependency */,
 			);
 			name = uFree;
 			productName = uFree;
 			productReference = 0513AB951DC4FDC8000221D9 /* uFree.app */;
 			productType = "com.apple.product-type.application";
+		};
+		05BF39831DDF688100102456 /* uFreeWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05BF39A51DDF688100102456 /* Build configuration list for PBXNativeTarget "uFreeWatch" */;
+			buildPhases = (
+				05BF39821DDF688100102456 /* Resources */,
+				05BF39A41DDF688100102456 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05BF39931DDF688100102456 /* PBXTargetDependency */,
+			);
+			name = uFreeWatch;
+			productName = uFreeWatch;
+			productReference = 05BF39841DDF688100102456 /* uFreeWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		05BF398F1DDF688100102456 /* uFreeWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05BF39A31DDF688100102456 /* Build configuration list for PBXNativeTarget "uFreeWatch Extension" */;
+			buildPhases = (
+				05BF398C1DDF688100102456 /* Sources */,
+				05BF398D1DDF688100102456 /* Frameworks */,
+				05BF398E1DDF688100102456 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "uFreeWatch Extension";
+			productName = "uFreeWatch Extension";
+			productReference = 05BF39901DDF688100102456 /* uFreeWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -164,6 +290,16 @@
 							};
 						};
 					};
+					05BF39831DDF688100102456 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 539HM634PU;
+						ProvisioningStyle = Automatic;
+					};
+					05BF398F1DDF688100102456 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 6CF599BUVU;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 0513AB901DC4FDC8000221D9 /* Build configuration list for PBXProject "uFree" */;
@@ -180,6 +316,8 @@
 			projectRoot = "";
 			targets = (
 				0513AB941DC4FDC8000221D9 /* uFree */,
+				05BF39831DDF688100102456 /* uFreeWatch */,
+				05BF398F1DDF688100102456 /* uFreeWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -194,6 +332,23 @@
 				0513ABA01DC4FDC8000221D9 /* Assets.xcassets in Resources */,
 				05F844641DD60C8000204509 /* AppIcon.appiconset in Resources */,
 				0513AB9E1DC4FDC8000221D9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05BF39821DDF688100102456 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05BF398A1DDF688100102456 /* Assets.xcassets in Resources */,
+				05BF39881DDF688100102456 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		05BF398E1DDF688100102456 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05BF399A1DDF688100102456 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,7 +377,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		05BF398C1DDF688100102456 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05BF39981DDF688100102456 /* ExtensionDelegate.swift in Sources */,
+				05BF39961DDF688100102456 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		05BF39931DDF688100102456 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05BF398F1DDF688100102456 /* uFreeWatch Extension */;
+			targetProxy = 05BF39921DDF688100102456 /* PBXContainerItemProxy */;
+		};
+		05BF399D1DDF688100102456 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 05BF39831DDF688100102456 /* uFreeWatch */;
+			targetProxy = 05BF399C1DDF688100102456 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0513AB9C1DC4FDC8000221D9 /* Main.storyboard */ = {
@@ -239,6 +416,14 @@
 				0513ABA21DC4FDC8000221D9 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		05BF39861DDF688100102456 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05BF39871DDF688100102456 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -380,6 +565,80 @@
 			};
 			name = Release;
 		};
+		05BF399F1DDF688100102456 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 539HM634PU;
+				IBSC_MODULE = uFreeWatch_Extension;
+				INFOPLIST_FILE = uFreeWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owinrauke.uFree.Alpha.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		05BF39A01DDF688100102456 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 539HM634PU;
+				IBSC_MODULE = uFreeWatch_Extension;
+				INFOPLIST_FILE = uFreeWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.owinrauke.uFree.Alpha.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
+		05BF39A11DDF688100102456 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 6CF599BUVU;
+				INFOPLIST_FILE = "uFreeWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owinrauke.uFree.Alpha.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Debug;
+		};
+		05BF39A21DDF688100102456 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 6CF599BUVU;
+				INFOPLIST_FILE = "uFreeWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.owinrauke.uFree.Alpha.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.1;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -400,6 +659,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		05BF39A31DDF688100102456 /* Build configuration list for PBXNativeTarget "uFreeWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05BF39A11DDF688100102456 /* Debug */,
+				05BF39A21DDF688100102456 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		05BF39A51DDF688100102456 /* Build configuration list for PBXNativeTarget "uFreeWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05BF399F1DDF688100102456 /* Debug */,
+				05BF39A01DDF688100102456 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
