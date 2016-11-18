@@ -39,6 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        
+        UIApplication.shared.applicationIconBadgeNumber = 1
         print(userInfo)
     }
 
