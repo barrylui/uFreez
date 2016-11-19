@@ -189,7 +189,7 @@ class ConnectionManager {
 
     static func addFriendWithCheck(userName: String, friendName: String, view:UIViewController) {
         print("friendslist", CurrentUser.getFriendRequestList().index(of: friendName))
-        if (friendName == CurrentUser.getUserName() || CurrentUser.getFriendsList().index(of: friendName) == nil || CurrentUser.getFriendRequestList().index(of: friendName) != nil) {
+        if (friendName == CurrentUser.getUserName() || CurrentUser.getFriendsList().index(of: friendName) != nil || CurrentUser.getFriendRequestList().index(of: friendName) != nil) {
             
             let alert = UIAlertController(title: "Error!", message: "Cannot add a user that has been sent a friend request or is your friend", preferredStyle: .alert)
             
