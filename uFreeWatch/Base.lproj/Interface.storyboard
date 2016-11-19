@@ -14,8 +14,8 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="uFreeWatch" customModuleProvider="target">
                     <items>
-                        <label width="136" height="72" alignment="left" text="Welcome to uFree Watch Edition" textAlignment="center" numberOfLines="2" id="CU0-3N-JXP"/>
-                        <button width="1" alignment="left" title="Find Free Friends" id="ijw-mb-aC8">
+                        <label width="136" height="72" alignment="center" text="Welcome to uFree Watch Edition" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="2" id="CU0-3N-JXP"/>
+                        <button width="1" alignment="center" title="Find Free Friends" id="ijw-mb-aC8">
                             <connections>
                                 <segue destination="X7E-ex-HIv" kind="push" id="5Ak-7g-adm"/>
                             </connections>
