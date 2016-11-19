@@ -188,37 +188,56 @@ class ConnectionManager {
     }
 
     static func addFriendWithCheck(userName: String, friendName: String, view:UIViewController) {
-        let sem = DispatchSemaphore(value: 0);
-        let url = NSURL(string: (serverAddress+"checkUserExist/"+friendName))
-
-        var jsonObject = NSDictionary()
-        let task = URLSession.shared.dataTask(with: url as! URL) { (data, response, error) in
-            do {
-                jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
-                sem.signal()
-            } catch {
-            }
-        }
-        task.resume()
-        sem.wait(timeout: DispatchTime.distantFuture)
-        //var dic: [String : AnyObject] = jsonObject as! [String : String] as [String : AnyObject]
-        let code = jsonObject[JSON_PASS_FAIL]
-        if (code as! Int  == PASS_CODE) {
-            addFriendRequest(userName: userName, friendName: friendName)
-            sendFriendAddedNotification(userName: userName, friend: friendName)
-        } else {
-            print("an error should be thrown here") // *******************
-            let alert = UIAlertController(title: "Error!", message: "The user you entered is not a valid user name!", preferredStyle: .alert)
+        print("friendslist", CurrentUser.getFriendRequestList().index(of: friendName))
+        if (friendName == CurrentUser.getUserName() || CurrentUser.getFriendsList().index(of: friendName) == nil || CurrentUser.getFriendRequestList().index(of: friendName) != nil) {
+            
+            let alert = UIAlertController(title: "Error!", message: "Cannot add a user that has been sent a friend request or is your friend", preferredStyle: .alert)
             
             // 3. Grab the value from the text field, and print it when the user clicks OK.
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
-               
+                
             }))
             view.present(alert, animated: true, completion: nil)
-            print()
-            //CurrentUser.removeFromFriendRequestArray(location: CurrentUser.getFriendsList().count-1)
+            
+        } else {
+            let sem = DispatchSemaphore(value: 0);
+            let url = NSURL(string: (serverAddress+"checkUserExist/"+friendName))
+            
+            var jsonObject = NSDictionary()
+            let task = URLSession.shared.dataTask(with: url as! URL) { (data, response, error) in
+                do {
+                    jsonObject = try JSONSerialization.jsonObject(with: data!, options:.allowFragments) as! NSDictionary
+                    sem.signal()
+                } catch {
+                }
+            }
+            task.resume()
+            sem.wait(timeout: DispatchTime.distantFuture)
+            //var dic: [String : AnyObject] = jsonObject as! [String : String] as [String : AnyObject]
+            let code = jsonObject[JSON_PASS_FAIL]
+            if (code as! Int  == PASS_CODE) {
+                addFriendRequest(userName: userName, friendName: friendName)
+                sendFriendAddedNotification(userName: userName, friend: friendName)
+            } else {
+               
+                print("an error should be thrown here") // *******************
+                let alert = UIAlertController(title: "Error!", message: "The user you entered is not a valid user name!", preferredStyle: .alert)
+                
+                // 3. Grab the value from the text field, and print it when the user clicks OK.
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                    
+                }))
+                view.present(alert, animated: true, completion: nil)
+                print()
+                //CurrentUser.removeFromFriendRequestArray(location: CurrentUser.getFriendsList().count-1)
+            
+            }
         }
     }
+        
+        
+        
+        
     
     private static func addUserWithCheck(userName: String, password: String, telephone: String, name: String, view: UIViewController) {
         //let url = NSURL(string: (serverAddress+"createUser/"+userName+"/"+password+"/"+telephone+"/"+name))
