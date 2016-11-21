@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WatchConnectivity
 
 class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var userNameTextField: UITextField?
@@ -28,20 +27,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     override func viewDidAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
         
-        if (isUserDataStored()) {
+        if (isUserDataStores()) {
             print("user data was stored")
             ConnectionManager.loginUser(userName: defaults.string(forKey: "UserName")!
                 , passWord: (defaults.string(forKey: "Password"))!, view: self)
             ConnectionManager.setDeviceToken(userName: (userNameTextField?.text!)!, token: CurrentUser.getDeviceToken())
-            let applicationDict = ["UserName": defaults.string(forKey: "UserName")!, "Password": defaults.string(forKey: "Password")!]// Create a dict of application data
-            do {
-              try _ = WCSession.default().updateApplicationContext(applicationDict)
-                print("sent", applicationDict)
-            }
-            catch {
-                print("unable to send")
-            }
-            
+            //            let controller = self.storyboard?.instantiateViewController(withIdentifier: "sw_reveal")
+            //            self.present(controller!, animated: true, completion: nil)
         } else {
             print("user data isnt stored")
             ConnectionManager.setDeviceToken(userName: (userNameTextField?.text!)!, token: CurrentUser.getDeviceToken())
@@ -81,7 +73,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    private func isUserDataStored() -> Bool {
+    private func isUserDataStores() -> Bool {
         let defaults = UserDefaults.standard
         return !(defaults.string(forKey: "UserName") == nil) && !(defaults.string(forKey: "Password") == nil)
     }
