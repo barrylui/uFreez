@@ -15,7 +15,6 @@ class LangingPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         storeUserData()
         welcomeLabel.text = "Hello \(CurrentUser.getName())"
         
@@ -31,7 +30,6 @@ class LangingPageViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     private func storeUserData() {
         let defaults = UserDefaults.standard
