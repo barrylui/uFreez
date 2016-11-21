@@ -55,7 +55,18 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signInButtonClicked(button: UIButton) {
         let internetCheck = Reachability()
-        if (internetCheck.isInternetAvailable()) {
+        
+        if (userNameTextField?.text == "" || passWordTextField?.text == "") {
+            
+            let alert = UIAlertController(title: "Error!", message: "Cannot leave any frields blank", preferredStyle: .alert)
+            
+            // 3. Grab the value from the text field, and print it when the user clicks OK.
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
+                
+            }))
+            self.present(alert, animated: true, completion: nil)
+            
+        } else if (internetCheck.isInternetAvailable()) {
 
             ConnectionManager.loginUser(userName: (userNameTextField?.text!)!, passWord: (passWordTextField?.text!)!, view: self)
             ConnectionManager.setDeviceToken(userName: (userNameTextField?.text!)!, token: CurrentUser.getDeviceToken())
