@@ -12,6 +12,7 @@ import Foundation
 class CurrentUserWatch {
 
     private static var friendsList = Array<String>()
+    private static var userName = String()
     
     static func setFriendsList(unparsedArray: [String:AnyObject]) {
         print(unparsedArray)
@@ -21,6 +22,14 @@ class CurrentUserWatch {
             let userArray = user.components(separatedBy: "-")
             friendsList.append(userArray[0].replacingOccurrences(of: "_", with: " ", options: .literal, range: nil))
         }
+    }
+    
+    static func setUserName(userName: String) {
+        self.userName = userName
+    }
+    
+    static func getUserName() -> String {
+        return self.userName
     }
     
     static func getFriendsList() -> Array<String> {

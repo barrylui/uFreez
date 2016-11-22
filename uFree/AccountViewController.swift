@@ -61,6 +61,8 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         ConnectionManager.setDeviceAvailibility(userName: CurrentUser.getUserName(), bool: "false")
         CurrentUser.sanitizeFields()
         sanitizeUserData()
+        var watchConnection = ConnectivityHandler()
+        watchConnection.sendSanitizeUser()
     }
     
     private func sanitizeUserData() {

@@ -10,6 +10,9 @@ import WatchKit
 import WatchConnectivity
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
+    var connectivityHandler : ConnectivityHandlerWatch?
+
+    
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
         if (WCSession.default().isReachable) {
@@ -21,6 +24,10 @@ class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
     func applicationDidBecomeActive() {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        //present
+        
+        self.connectivityHandler = ConnectivityHandlerWatch()
+        connectivityHandler?.session.activate()
     }
 
     func applicationWillResignActive() {

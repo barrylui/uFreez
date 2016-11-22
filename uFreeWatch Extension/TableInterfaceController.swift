@@ -16,7 +16,7 @@ class TableInterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         print(isUserDataStored())
-        ConnectionManagerWatch.getAvailableFriends(username: "omer")
+        ConnectionManagerWatch.getAvailableFriends(username: CurrentUserWatch.getUserName())
         tableView.setNumberOfRows(CurrentUserWatch.getFriendsList().count, withRowType: "MainRowType")
         print("set number of rows", CurrentUserWatch.getFriendsList().count)
         for i in 0..<CurrentUserWatch.getFriendsList().count {

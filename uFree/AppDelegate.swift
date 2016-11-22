@@ -8,12 +8,13 @@
 
 import UIKit
 import UserNotifications
+import WatchConnectivity
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var connectivityHandler : ConnectivityHandler?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -21,6 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let pushNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         application.registerUserNotificationSettings(pushNotificationSettings)
         application.registerForRemoteNotifications()
+        
+        if WCSession.isSupported() {
+            let wcsession = WCSession.default()
+            self.connectivityHandler = ConnectivityHandler()
+            connectivityHandler?.session.activate()
+
+        } else {
+            NSLog("WCSession not supported (f.e. on iPad).")
+        }
         
         return true
     }

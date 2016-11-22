@@ -17,17 +17,17 @@
                         <label width="136" height="72" alignment="center" text="Welcome to uFree Watch Edition" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="2" id="CU0-3N-JXP"/>
                         <button width="1" alignment="center" title="Find Free Friends" id="ijw-mb-aC8">
                             <connections>
-                                <segue destination="X7E-ex-HIv" kind="push" id="5Ak-7g-adm"/>
+                                <action selector="findFriendButtonClickedWithButton:" destination="AgC-eL-Hgc" id="0sg-zH-zwa"/>
                             </connections>
                         </button>
                     </items>
                 </controller>
             </objects>
         </scene>
-        <!--Table Interface Controller-->
+        <!--Generate_Friend-->
         <scene sceneID="0kI-wT-a7t">
             <objects>
-                <controller id="X7E-ex-HIv" customClass="TableInterfaceController" customModule="uFreeWatch_Extension">
+                <controller identifier="Generate_Friend" id="X7E-ex-HIv" customClass="TableInterfaceController" customModule="uFreeWatch_Extension">
                     <items>
                         <table alignment="left" id="fZy-cJ-7xG">
                             <items>
@@ -50,6 +50,28 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="404" y="84"/>
+        </scene>
+        <!--login_error-->
+        <scene sceneID="82x-Ng-uwX">
+            <objects>
+                <controller identifier="login_error" id="K7B-1f-bn5">
+                    <items>
+                        <label width="136" height="172" alignment="center" text="Error: Please login on the iPhone App in order to use watch extension" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="5" id="QUd-Ux-vbc"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="330" y="472"/>
+        </scene>
+        <!--connection_error-->
+        <scene sceneID="FUB-ve-HTV">
+            <objects>
+                <controller identifier="connection_error" id="Neq-og-1tS">
+                    <items>
+                        <label width="136" height="199" alignment="center" text="Error: Unable to establish connection with phone, please open the app and login" textAlignment="center" baselineAdjustment="alignCenters" numberOfLines="6" id="zuf-pl-hkB"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="690" y="473"/>
         </scene>
     </scenes>
 </document>

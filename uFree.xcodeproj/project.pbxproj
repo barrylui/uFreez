@@ -25,6 +25,7 @@
 		0549FBBA1DDFA230009311C9 /* CurrentUserWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0549FBB91DDFA230009311C9 /* CurrentUserWatch.swift */; };
 		0585DB1C1DC53B1800A7F4BE /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */; };
 		0585DB1E1DC54D2300A7F4BE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */; };
+		05A20C711DE3DABF00823743 /* ConnectivityHandlerWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A20C701DE3DABF00823743 /* ConnectivityHandlerWatch.swift */; };
 		05BF39881DDF688100102456 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05BF39861DDF688100102456 /* Interface.storyboard */; };
 		05BF398A1DDF688100102456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05BF39891DDF688100102456 /* Assets.xcassets */; };
 		05BF39911DDF688100102456 /* uFreeWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 05BF39901DDF688100102456 /* uFreeWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -37,6 +38,7 @@
 		05F844641DD60C8000204509 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 05F844631DD60C8000204509 /* AppIcon.appiconset */; };
 		05F8446E1DD9483C00204509 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8446D1DD9483C00204509 /* Reachability.swift */; };
 		05F844721DDA8FE500204509 /* FriendRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */; };
+		05FB1B4A1DE3AB7200FA89C5 /* ConnectivityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05FB1B491DE3AB7200FA89C5 /* ConnectivityHandler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,7 @@
 		0549FBB91DDFA230009311C9 /* CurrentUserWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUserWatch.swift; sourceTree = "<group>"; };
 		0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
+		05A20C701DE3DABF00823743 /* ConnectivityHandlerWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityHandlerWatch.swift; sourceTree = "<group>"; };
 		05BF39841DDF688100102456 /* uFreeWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uFreeWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05BF39871DDF688100102456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		05BF39891DDF688100102456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewCell.swift; sourceTree = "<group>"; };
 		05F844731DDBA64700204509 /* uFree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uFree.entitlements; sourceTree = "<group>"; };
 		05FB1B461DDFAE6A00FA89C5 /* uFreeWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uFreeWatch.entitlements; sourceTree = "<group>"; };
+		05FB1B491DE3AB7200FA89C5 /* ConnectivityHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectivityHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +189,7 @@
 				0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */,
 				0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */,
 				05F8446D1DD9483C00204509 /* Reachability.swift */,
+				05FB1B491DE3AB7200FA89C5 /* ConnectivityHandler.swift */,
 			);
 			path = uFree;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				05BF39951DDF688100102456 /* InterfaceController.swift */,
 				0549FBB71DDFA184009311C9 /* TableInterfaceController.swift */,
 				0549FBB91DDFA230009311C9 /* CurrentUserWatch.swift */,
+				05A20C701DE3DABF00823743 /* ConnectivityHandlerWatch.swift */,
 				0549FBB51DDF9FE4009311C9 /* ConnectionManagerWatch.swift */,
 				05BF39991DDF688100102456 /* Assets.xcassets */,
 				05BF399B1DDF688100102456 /* Info.plist */,
@@ -377,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0513ABB61DC5057F000221D9 /* GenerateFreeFriendsTableViewController.swift in Sources */,
+				05FB1B4A1DE3AB7200FA89C5 /* ConnectivityHandler.swift in Sources */,
 				0513AB991DC4FDC8000221D9 /* AppDelegate.swift in Sources */,
 				0513ABBA1DC50764000221D9 /* AccountViewController.swift in Sources */,
 				05F844721DDA8FE500204509 /* FriendRequestTableViewCell.swift in Sources */,
@@ -399,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05BF39981DDF688100102456 /* ExtensionDelegate.swift in Sources */,
+				05A20C711DE3DABF00823743 /* ConnectivityHandlerWatch.swift in Sources */,
 				0549FBB61DDF9FE4009311C9 /* ConnectionManagerWatch.swift in Sources */,
 				0549FBB81DDFA184009311C9 /* TableInterfaceController.swift in Sources */,
 				0549FBBA1DDFA230009311C9 /* CurrentUserWatch.swift in Sources */,
