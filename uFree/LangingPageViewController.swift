@@ -17,6 +17,7 @@ class LangingPageViewController: UIViewController {
         
         
         storeUserData()
+        ConnectionManager.setDeviceToken(userName: CurrentUser.getUserName(), token: CurrentUser.getDeviceToken())
         welcomeLabel.text = "Hello \(CurrentUser.getName())"
         
         if self.revealViewController() != nil {
