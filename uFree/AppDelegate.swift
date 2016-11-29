@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let pushNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
         application.registerUserNotificationSettings(pushNotificationSettings)
         application.registerForRemoteNotifications()
-        UITextField.appearance().tintColor = UIColor.black 
+        UITextField.appearance().tintColor = UIColor.black
+        //UISegmentedControl.tintColor = UIColor.white
         return true
     }
     
