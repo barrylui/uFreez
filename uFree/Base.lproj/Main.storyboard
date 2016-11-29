@@ -240,7 +240,7 @@
                         <sections>
                             <tableViewSection id="QI1-XG-qbB">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="90h-An-NQs" style="IBUITableViewCellStyleDefault" id="UIm-R8-vTD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" textLabel="90h-An-NQs" style="IBUITableViewCellStyleDefault" id="UIm-R8-vTD">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UIm-R8-vTD" id="5Ej-fo-9EX">
@@ -475,7 +475,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="backgroundColor" red="0.14507749676704407" green="0.1451098620891571" blue="0.14507544040679932" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="nh5-tG-ja5" firstAttribute="leading" secondItem="Wt5-I2-mpa" secondAttribute="leading" constant="5" id="Dxt-w1-pSU"/>
                                                         <constraint firstItem="91s-qw-w6f" firstAttribute="leading" secondItem="nh5-tG-ja5" secondAttribute="trailing" constant="5" id="KOj-mv-clz"/>
@@ -1408,7 +1408,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="test" rowHeight="107" id="Agc-no-EcQ" customClass="FriendsTableViewCell" customModule="uFree" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="test" rowHeight="107" id="Agc-no-EcQ" customClass="FriendsTableViewCell" customModule="uFree" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="107"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Agc-no-EcQ" id="3fx-Zu-AfS">
