@@ -32,13 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         CurrentUser.setDeviceToken(token: deviceTokenString)
-        print(deviceTokenString)
+        
+        print("here", deviceTokenString)
         
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         CurrentUser.setDeviceToken(token: "nil")
-        print(error)
+        print("here", error)
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {

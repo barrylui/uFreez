@@ -61,7 +61,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         } else if (internetCheck.isInternetAvailable()) {
 
             ConnectionManager.loginUser(userName: (userNameTextField?.text!)!, passWord: (passWordTextField?.text!)!, view: self)
-            ConnectionManager.setDeviceToken(userName: (userNameTextField?.text!)!, token: CurrentUser.getDeviceToken())
+            //ConnectionManager.setDeviceToken(userName: (userNameTextField?.text!)!, token: CurrentUser.getDeviceToken())
         } else {
             let alert = UIAlertController(title: "Error!", message: "No Internet connection available", preferredStyle: .alert)
             

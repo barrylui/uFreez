@@ -38,7 +38,11 @@ class ConnectionManager {
         print("asyn sent", urlRequest)
         let url = NSURL(string: urlRequest)
         makeAsyncCall(url: url!)
-        setDeviceAvailibility(userName: userName, bool: "true")
+        if (token == "nil") {
+            setDeviceAvailibility(userName: userName, bool: "false")
+        } else {
+            setDeviceAvailibility(userName: userName, bool: "true")
+        }
     }
     
     static func updateAvalabilityOverride(userName: String, value: Int) {

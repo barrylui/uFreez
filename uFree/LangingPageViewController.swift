@@ -17,7 +17,14 @@ class LangingPageViewController: UIViewController {
         
         
         storeUserData()
-        ConnectionManager.setDeviceToken(userName: CurrentUser.getUserName(), token: CurrentUser.getDeviceToken())
+        if(UIApplication.shared.isRegisteredForRemoteNotifications) {
+            ConnectionManager.setDeviceToken(userName: CurrentUser.getUserName(), token: CurrentUser.getDeviceToken())
+            print("enabled push notifications")
+        } else {
+            ConnectionManager.setDeviceAvailibility(userName: CurrentUser.getUserName(), bool: "false")
+            print("disabled push notifications")
+        }
+        
         welcomeLabel.text = "Hello \(CurrentUser.getName())"
         
         if self.revealViewController() != nil {
