@@ -15,6 +15,7 @@ class AvailableFriendTableViewCell: UITableViewCell {
     @IBOutlet weak var round2: UIView!
     @IBOutlet var timeBigLabel: UILabel!
     @IBOutlet var view: UIViewController!
+    @IBOutlet var friendImageView: UIImageView?
     
     var phoneNumber: String = String()
     override func awakeFromNib() {

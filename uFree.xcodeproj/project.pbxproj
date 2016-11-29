@@ -19,6 +19,7 @@
 		0513ABB81DC506DD000221D9 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */; };
 		0513ABBA1DC50764000221D9 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0513ABB91DC50764000221D9 /* AccountViewController.swift */; };
 		052ECF4F1DD29728007AFAFA /* AvailableFriendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052ECF4E1DD29728007AFAFA /* AvailableFriendTableViewCell.swift */; };
+		052FFC601DED4181008556A4 /* icon_transparent_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 052FFC5F1DED4181008556A4 /* icon_transparent_red.png */; };
 		0531F7451DDE2D97002B44FE /* FriendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0531F7441DDE2D97002B44FE /* FriendTableViewController.swift */; };
 		0585DB1C1DC53B1800A7F4BE /* ConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */; };
 		0585DB1E1DC54D2300A7F4BE /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */; };
@@ -48,6 +49,7 @@
 		0513ABB71DC506DD000221D9 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		0513ABB91DC50764000221D9 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		052ECF4E1DD29728007AFAFA /* AvailableFriendTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvailableFriendTableViewCell.swift; sourceTree = "<group>"; };
+		052FFC5F1DED4181008556A4 /* icon_transparent_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_transparent_red.png; sourceTree = "<group>"; };
 		0531F7441DDE2D97002B44FE /* FriendTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendTableViewController.swift; sourceTree = "<group>"; };
 		0585DB1B1DC53B1800A7F4BE /* ConnectionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionManager.swift; sourceTree = "<group>"; };
 		0585DB1D1DC54D2300A7F4BE /* CurrentUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			children = (
 				4C29F8561DE74C210036B0B5 /* cat-8.png */,
 				4C29F8571DE74C210036B0B5 /* Icon_Transparent_Green.png */,
+				052FFC5F1DED4181008556A4 /* icon_transparent_red.png */,
 				0513AB971DC4FDC8000221D9 /* uFree */,
 				0513AB961DC4FDC8000221D9 /* Products */,
 			);
@@ -198,6 +201,7 @@
 				0513ABA31DC4FDC8000221D9 /* LaunchScreen.storyboard in Resources */,
 				4C29F8581DE74C210036B0B5 /* cat-8.png in Resources */,
 				0509B1CD1DCE7A2300A07055 /* Images.xcassets in Resources */,
+				052FFC601DED4181008556A4 /* icon_transparent_red.png in Resources */,
 				0513ABA01DC4FDC8000221D9 /* Assets.xcassets in Resources */,
 				4C29F8591DE74C210036B0B5 /* Icon_Transparent_Green.png in Resources */,
 				05F844641DD60C8000204509 /* AppIcon.appiconset in Resources */,

@@ -504,6 +504,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="friendImageView" destination="nh5-tG-ja5" id="p9X-K5-SmQ"/>
                                             <outlet property="nameLabel" destination="W2s-hm-tgg" id="hdr-7s-AGl"/>
                                             <outlet property="round2" destination="Wt5-I2-mpa" id="Ocd-z7-Eez"/>
                                             <outlet property="timeBigLabel" destination="LDy-aC-6FS" id="tqc-72-JdA"/>

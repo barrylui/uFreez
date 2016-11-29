@@ -72,6 +72,8 @@ class GenerateFreeFriendsTableViewController: UIViewController,  UITableViewDele
             time = "Free for roughly an hour or more"
         } else if (CurrentUser.getAvailableFriends()[indexPath.row].getTime() < 0) {
             time = "Will be free in roughly \(abs(CurrentUser.getAvailableFriends()[indexPath.row].getTime())) minutes"
+            cell.friendImageView?.image = (UIImage (named: "icon_transparent_red.png"))
+            
         } else {
             time = "Free for roughly \(abs(CurrentUser.getAvailableFriends()[indexPath.row].getTime())) minutes"
         }
