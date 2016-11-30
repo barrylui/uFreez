@@ -18,9 +18,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         userNameTextField!.delegate = self
         passWordTextField!.delegate = self
-        
-
-
         // Do any additional setup after loading the view, typically from a nib.
     }
     
