@@ -170,6 +170,7 @@
 				TargetAttributes = {
 					0513AB941DC4FDC8000221D9 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 539HM634PU;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -364,7 +365,7 @@
 				CODE_SIGN_ENTITLEMENTS = uFree/uFree.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 539HM634PU;
 				INFOPLIST_FILE = uFree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -386,7 +387,7 @@
 				CODE_SIGN_ENTITLEMENTS = uFree/uFree.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 539HM634PU;
 				INFOPLIST_FILE = uFree/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
