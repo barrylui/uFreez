@@ -79,6 +79,7 @@ class ScheduleViewController: UIViewController, UITabBarDelegate {
         default:
             break;
         }
+        updateDayLabel(day: currentDay)
     }
     
     private func loadSchedule(day: Int, amOrPm: Int) {
@@ -141,6 +142,12 @@ class ScheduleViewController: UIViewController, UITabBarDelegate {
         case 6:
             dayLabel.text = "Saturday"
         default: break
+        }
+        
+        if (amOrPm == 0) {
+            dayLabel.text = dayLabel.text! + " - AM"
+        } else {
+            dayLabel.text = dayLabel.text! + " - PM"
         }
     }
     
