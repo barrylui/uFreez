@@ -34,7 +34,7 @@ class ScheduleViewController: UIViewController, UITabBarDelegate {
         schedule2Darray.append(scheduleButtons2)
         schedule2Darray.append(scheduleButtons3)
         schedule2Darray.append(scheduleButtons4)
-        loadSchedule(day: currentDay, amOrPm: amOrPm)
+        //loadSchedule(day: currentDay, amOrPm: amOrPm)
         updateDayLabel(day: currentDay)
         // Do any additional setup after loading the view.
     }
@@ -46,13 +46,27 @@ class ScheduleViewController: UIViewController, UITabBarDelegate {
     
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         currentDay = item.tag
-        loadSchedule(day: currentDay, amOrPm: amOrPm)
+        //loadSchedule(day: currentDay, amOrPm: amOrPm)
         updateDayLabel(day: currentDay)
     }
 
     
     @IBAction func scheduleButtonClicked(button: UIButton) {
-        button.backgroundColor = button.backgroundColor == UIColor.red ? UIColor.blue : UIColor.red
+        if (button.currentImage == UIImage(named: "red butt.png"))
+        {
+            button.setImage(UIImage(named: "green butt.png"), for: .normal)
+        } else {
+            button.setImage(UIImage(named: "red butt.png"), for: .normal)
+        }
+        
+        //if let image = UIImage(named: "red butt.png")
+        //{
+        //    button.setImage(UIImage(named:"green butt.png"), for: .normal)
+        //}
+        //if let image = UIImage(named: "green butt.png")
+        //{
+        //    button.setImage(UIImage(named: "red butt.png"), for: .normal)
+        //}
         let coordinates = getCoordinates(location: button.tag)
         let newValue = CurrentUser.getSchedule()[currentDay][amOrPm][coordinates.0][coordinates.1] == 0 ? 1 : 0
         let dayInString = dayIndexToString(day: currentDay)
@@ -66,22 +80,22 @@ class ScheduleViewController: UIViewController, UITabBarDelegate {
         {
         case 0:
             amOrPm = 0
-            loadSchedule(day: currentDay, amOrPm: amOrPm)
+            //loadSchedule(day: currentDay, amOrPm: amOrPm)
         case 1:
             amOrPm = 1
-            loadSchedule(day: currentDay, amOrPm: amOrPm)
+            //loadSchedule(day: currentDay, amOrPm: amOrPm)
         default:
             break;
         }
     }
     
-    private func loadSchedule(day: Int, amOrPm: Int) {
-        for i in 0...CurrentUser.getSchedule()[day][amOrPm].count-1 {
-            for j in 0...CurrentUser.getSchedule()[day][amOrPm][i].count-1 {
-                schedule2Darray[j][i].backgroundColor = CurrentUser.getSchedule()[day][amOrPm][i][j] == 0 ? UIColor.blue : UIColor.red
-            }
-        }
-    }
+   // private func loadSchedule(day: Int, amOrPm: Int) {
+  //     for i in 0...CurrentUser.getSchedule()[day][amOrPm].count-1 {
+    //        for j in 0...CurrentUser.getSchedule()[day][amOrPm][i].count-1 {
+      //          schedule2Darray[j][i].backgroundColor = CurrentUser.getSchedule()[day][amOrPm][i][j] == 0 ? UIColor.blue : UIColor.red
+      //      }
+     //   }
+   // }
     
     private func getCoordinates(location:Int) -> (Int, Int) {
         print(location)
