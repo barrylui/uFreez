@@ -22,10 +22,12 @@ class FriendTableViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        
         self.tableView.clearsContextBeforeDrawing = true
+        //self.tableView.allowsSelection = true
         ConnectionManager.getFriends(username: CurrentUser.getUserName(), tableView: self.tableView, view: self)
         if (CurrentUser.getFriendsList().count == 0) {
-            let alert = UIAlertController(title: "Alert!", message: "There are no friend requests available at this time", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Alert!", message: "There are no friends in your list at this time", preferredStyle: .alert)
             
             // 3. Grab the value from the text field, and print it when the user clicks OK.
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (_) in
@@ -63,6 +65,8 @@ class FriendTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: FriendsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "test", for: indexPath) as! FriendsTableViewCell
         cell.friendsLabel.text = CurrentUser.getFriendsList()[indexPath.row]
+        //cell.selectionStyle = UITableViewCellSelectionStyle.gray
+        
         let radius = cell.rounder.frame.height / 4
         cell.rounder.layer.cornerRadius = radius
         print("here")
@@ -98,13 +102,14 @@ class FriendTableViewController: UITableViewController {
 //    }
  
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
+    
+//    // Override to support conditional editing of the table view.
+//    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//         //Return false if you do not want the specified item to be editable.
+//        print("here 2 ")
+//        return true
+//    }
+    
 
     /*
     // Override to support editing the table view.
