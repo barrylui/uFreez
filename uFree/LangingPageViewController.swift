@@ -11,9 +11,17 @@ import UIKit
 class LangingPageViewController: UIViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     @IBOutlet var welcomeLabel: UILabel!
+<<<<<<< HEAD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+=======
+    @IBOutlet weak var ScrollView: UIScrollView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ScrollView.contentSize.height = 2000
+>>>>>>> barry/master
         
         
         storeUserData()
