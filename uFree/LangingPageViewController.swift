@@ -11,17 +11,11 @@ import UIKit
 class LangingPageViewController: UIViewController {
     @IBOutlet weak var menuButton:UIBarButtonItem!
     @IBOutlet var welcomeLabel: UILabel!
-<<<<<<< HEAD
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-=======
     @IBOutlet weak var ScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ScrollView.contentSize.height = 2000
->>>>>>> barry/master
         
         
         storeUserData()
@@ -42,7 +36,7 @@ class LangingPageViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

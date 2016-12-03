@@ -28,18 +28,14 @@
 		05F844641DD60C8000204509 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = 05F844631DD60C8000204509 /* AppIcon.appiconset */; };
 		05F8446E1DD9483C00204509 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8446D1DD9483C00204509 /* Reachability.swift */; };
 		05F844721DDA8FE500204509 /* FriendRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */; };
-
 		4C01DD331DF22F0D005CCE19 /* fff.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C01DD321DF22F0C005CCE19 /* fff.jpg */; };
-
 		4C0F8D711DEE2FEC00438A75 /* green butt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F8D701DEE2FEC00438A75 /* green butt.png */; };
 		4C0F8D731DEE372900438A75 /* red butt.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C0F8D721DEE372900438A75 /* red butt.png */; };
 		4C29F8581DE74C210036B0B5 /* cat-8.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C29F8561DE74C210036B0B5 /* cat-8.png */; };
 		4C29F8591DE74C210036B0B5 /* Icon_Transparent_Green.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C29F8571DE74C210036B0B5 /* Icon_Transparent_Green.png */; };
-
 		4C4ED8551DF22C6D008B721A /* sched.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4ED8541DF22C6D008B721A /* sched.jpg */; };
 		4C4ED8571DF22C73008B721A /* fl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4ED8561DF22C73008B721A /* fl.jpg */; };
 		4C4ED8591DF22C77008B721A /* acc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C4ED8581DF22C77008B721A /* acc.jpg */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,18 +65,14 @@
 		05F8446D1DD9483C00204509 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		05F844711DDA8FE500204509 /* FriendRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendRequestTableViewCell.swift; sourceTree = "<group>"; };
 		05F844731DDBA64700204509 /* uFree.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = uFree.entitlements; sourceTree = "<group>"; };
-
 		4C01DD321DF22F0C005CCE19 /* fff.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fff.jpg; sourceTree = SOURCE_ROOT; };
-
 		4C0F8D701DEE2FEC00438A75 /* green butt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green butt.png"; sourceTree = "<group>"; };
 		4C0F8D721DEE372900438A75 /* red butt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "red butt.png"; sourceTree = SOURCE_ROOT; };
 		4C29F8561DE74C210036B0B5 /* cat-8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cat-8.png"; sourceTree = "<group>"; };
 		4C29F8571DE74C210036B0B5 /* Icon_Transparent_Green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_Transparent_Green.png; sourceTree = "<group>"; };
-
 		4C4ED8541DF22C6D008B721A /* sched.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sched.jpg; sourceTree = "<group>"; };
 		4C4ED8561DF22C73008B721A /* fl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fl.jpg; sourceTree = "<group>"; };
 		4C4ED8581DF22C77008B721A /* acc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = acc.jpg; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,18 +90,14 @@
 			isa = PBXGroup;
 			children = (
 				4C0F8D701DEE2FEC00438A75 /* green butt.png */,
-
 				4C4ED8581DF22C77008B721A /* acc.jpg */,
 				4C4ED8561DF22C73008B721A /* fl.jpg */,
 				4C4ED8541DF22C6D008B721A /* sched.jpg */,
-
 				4C29F8561DE74C210036B0B5 /* cat-8.png */,
 				4C29F8571DE74C210036B0B5 /* Icon_Transparent_Green.png */,
 				052FFC5F1DED4181008556A4 /* icon_transparent_red.png */,
 				4C0F8D721DEE372900438A75 /* red butt.png */,
-
 				4C01DD321DF22F0C005CCE19 /* fff.jpg */,
-
 				0513AB971DC4FDC8000221D9 /* uFree */,
 				0513AB961DC4FDC8000221D9 /* Products */,
 			);
@@ -229,23 +217,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				0513ABA31DC4FDC8000221D9 /* LaunchScreen.storyboard in Resources */,
-
 				4C4ED8591DF22C77008B721A /* acc.jpg in Resources */,
 				4C0F8D731DEE372900438A75 /* red butt.png in Resources */,
 				4C29F8581DE74C210036B0B5 /* cat-8.png in Resources */,
 				4C4ED8571DF22C73008B721A /* fl.jpg in Resources */,
-
 				0509B1CD1DCE7A2300A07055 /* Images.xcassets in Resources */,
 				052FFC601DED4181008556A4 /* icon_transparent_red.png in Resources */,
 				4C0F8D711DEE2FEC00438A75 /* green butt.png in Resources */,
 				0513ABA01DC4FDC8000221D9 /* Assets.xcassets in Resources */,
 				4C29F8591DE74C210036B0B5 /* Icon_Transparent_Green.png in Resources */,
-
 				4C01DD331DF22F0D005CCE19 /* fff.jpg in Resources */,
 				05F844641DD60C8000204509 /* AppIcon.appiconset in Resources */,
 				0513AB9E1DC4FDC8000221D9 /* Main.storyboard in Resources */,
 				4C4ED8551DF22C6D008B721A /* sched.jpg in Resources */,
-
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +383,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 539HM634PU;
 				INFOPLIST_FILE = uFree/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.owinrauke.uFree.Alpha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -421,7 +405,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 539HM634PU;
 				INFOPLIST_FILE = uFree/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.owinrauke.uFree.Alpha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
