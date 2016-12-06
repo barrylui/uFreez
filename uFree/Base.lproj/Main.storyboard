@@ -487,9 +487,8 @@
                                     <constraint firstItem="FHV-Z6-Ucq" firstAttribute="centerX" secondItem="iLt-r4-aRW" secondAttribute="centerX" id="yr7-2y-nPu"/>
                                 </constraints>
                             </scrollView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Swipe right on a friend to text them to hang out!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7r-vP-oz6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Swipe right on a friend to text them to hang out!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7r-vP-oz6">
                                 <rect key="frame" x="0.0" y="1959" width="375" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -500,7 +499,10 @@
                             <constraint firstItem="iLt-r4-aRW" firstAttribute="centerY" secondItem="Sch-Db-9QR" secondAttribute="centerY" id="Bte-uz-6oN"/>
                             <constraint firstItem="iLt-r4-aRW" firstAttribute="centerX" secondItem="Sch-Db-9QR" secondAttribute="centerX" id="IjP-Fh-bGG"/>
                             <constraint firstItem="iLt-r4-aRW" firstAttribute="width" secondItem="Sch-Db-9QR" secondAttribute="width" id="NLW-dP-jzD"/>
+                            <constraint firstItem="C7r-vP-oz6" firstAttribute="centerX" secondItem="Sch-Db-9QR" secondAttribute="centerX" id="Ucp-8H-ew3"/>
+                            <constraint firstItem="C7r-vP-oz6" firstAttribute="top" secondItem="R73-YU-8l4" secondAttribute="bottom" constant="2" id="hps-G7-3jY"/>
                             <constraint firstItem="iLt-r4-aRW" firstAttribute="top" secondItem="sb1-Wy-iEq" secondAttribute="bottom" id="s8Y-eS-ZYG"/>
+                            <constraint firstItem="iLt-r4-aRW" firstAttribute="height" secondItem="Sch-Db-9QR" secondAttribute="height" id="vUW-OY-fY2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="KF5-de-dmy">
@@ -516,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYa-eR-AFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4769" y="-2658"/>
+            <point key="canvasLocation" x="5255" y="-1454"/>
         </scene>
         <!--Available Friends-->
         <scene sceneID="i3a-eT-nSg">
@@ -619,7 +621,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UHz-jN-4sS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4714" y="-550"/>
+            <point key="canvasLocation" x="4480.8000000000002" y="-583.3583208395803"/>
         </scene>
         <!--Schedule-->
         <scene sceneID="h15-ch-KuZ">
@@ -1596,7 +1598,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPk-Gp-WRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3830" y="-2657"/>
+            <point key="canvasLocation" x="3543" y="-1453"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9ny-sZ-Jyt">
@@ -1650,7 +1652,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XHF-Mo-8Gr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3542" y="-550"/>
+            <point key="canvasLocation" x="3542" y="-583"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P4e-Wk-6ub">
@@ -1683,7 +1685,7 @@
         <image name="sched.jpg" width="233" height="376"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QK7-bg-1pu"/>
+        <segue reference="bIR-2i-RT7"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>
