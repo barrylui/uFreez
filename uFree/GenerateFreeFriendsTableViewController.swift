@@ -68,12 +68,12 @@ class GenerateFreeFriendsTableViewController: UIViewController,  UITableViewDele
         cell.round2.layer.cornerRadius = 10
         //cell.view = self
         var time = String()
+        cell.friendImageView?.image = (UIImage (named: "icon_transparent_Green.png"))
         if (CurrentUser.getAvailableFriends()[indexPath.row].getTime() > 45) {
             time = "Free for roughly an hour or more"
         } else if (CurrentUser.getAvailableFriends()[indexPath.row].getTime() < 0) {
             time = "Will be free in roughly \(abs(CurrentUser.getAvailableFriends()[indexPath.row].getTime())) minutes"
             cell.friendImageView?.image = (UIImage (named: "icon_transparent_red.png"))
-            
         } else {
             time = "Free for roughly \(abs(CurrentUser.getAvailableFriends()[indexPath.row].getTime())) minutes"
         }
